@@ -1,9 +1,8 @@
 'use client'
 import type { ThemeProviderProps } from 'next-themes'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import dynamic from 'next/dynamic'
-
-const queryClient = new QueryClient()
+import { TRPCReactProvider } from '@/lib/trpc/client'
+import { Toaster } from './ui/sonner'
 
 // prevent hydration errors
 const NextThemesProvider = dynamic(
@@ -15,7 +14,7 @@ const NextThemesProvider = dynamic(
 
 function Providers({ children, ...props }: ThemeProviderProps) {
   return (
-    <QueryClientProvider client={queryClient}>
+    <TRPCReactProvider>
       <NextThemesProvider
         attribute="class"
         defaultTheme="system"
@@ -23,8 +22,9 @@ function Providers({ children, ...props }: ThemeProviderProps) {
         {...props}
       >
         {children}
+        <Toaster />
       </NextThemesProvider>
-    </QueryClientProvider>
+    </TRPCReactProvider>
   )
 }
 
