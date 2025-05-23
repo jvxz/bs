@@ -1,10 +1,10 @@
 const interactiveStyles = {
   base: 'focus-visible:border-primary/50 select-none focus-visible:ring-ring/40 focus-visible:ring-[3px] active:ring-ring/60 aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:aria-invalid:ring-destructive/40 shrink-0 gap-2 rounded text-base whitespace-nowrap outline-none disabled:pointer-events-none hover:disabled:cursor-not-allowed disabled:opacity-50 underline-offset-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:size-4',
   variant: {
-    default: 'bg-primary/85 hover:bg-primary/90 active:bg-primary text-primary-foreground',
-    destructive: 'hover:bg-destructive/85 bg-destructive/85 text-destructive-foreground hover:bg-destructive active:bg-destructive',
-    outline: 'border-border/85 hover:bg-muted/85 active:bg-muted hover:border-border/90 active:border-border border bg-transparent',
-    ghost: 'hover:bg-muted/85 active:bg-muted',
+    default: 'bg-primary/90 hover:bg-primary active:bg-primary/90 text-primary-foreground',
+    destructive: 'hover:bg-destructive/90 bg-destructive/90 text-destructive-foreground hover:bg-destructive active:bg-destructive',
+    outline: 'border-border/90 hover:bg-muted/90 active:bg-muted hover:border-border active:border-border border bg-transparent',
+    ghost: 'hover:bg-muted/90 active:bg-muted',
     link: 'text-primary underline-offset-4 hover:underline',
   },
   size: {
