@@ -1,6 +1,6 @@
 import type { VariantProps } from 'class-variance-authority'
-import type { ComponentProps } from 'react'
 import { cva } from 'class-variance-authority'
+import type { ComponentProps } from 'react'
 import { staticStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
 
@@ -28,9 +28,12 @@ function Alert({
     <div
       data-slot="alert"
       role="alert"
-      className={cn(alertVariants({
-        variant,
-      }), className)}
+      className={cn(
+        alertVariants({
+          variant,
+        }),
+        className,
+      )}
       {...props}
     />
   )
@@ -40,16 +43,16 @@ function AlertTitle({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
       data-slot="alert-title"
-      className={cn('col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight', className)}
+      className={cn(
+        'col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight',
+        className,
+      )}
       {...props}
     />
   )
 }
 
-function AlertDescription({
-  className,
-  ...props
-}: ComponentProps<'div'>) {
+function AlertDescription({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
       data-slot="alert-description"
@@ -62,8 +65,4 @@ function AlertDescription({
   )
 }
 
-export {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-}
+export { Alert, AlertDescription, AlertTitle }

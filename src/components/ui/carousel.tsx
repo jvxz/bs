@@ -1,8 +1,15 @@
 'use client'
 import type { UseEmblaCarouselType } from 'embla-carousel-react'
-import type { ComponentProps, KeyboardEvent } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
+import type { ComponentProps, KeyboardEvent } from 'react'
+import {
+  createContext,
+  use,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
@@ -77,8 +84,7 @@ function Carousel({
       if (event.key === 'ArrowLeft') {
         event.preventDefault()
         scrollPrev()
-      }
-      else if (event.key === 'ArrowRight') {
+      } else if (event.key === 'ArrowRight') {
         event.preventDefault()
         scrollNext()
       }
@@ -107,24 +113,34 @@ function Carousel({
       carouselRef,
       api,
       opts,
-      orientation: orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
+      orientation:
+        orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
       scrollPrev,
       scrollNext,
       canScrollPrev,
       canScrollNext,
     }
-  }, [carouselRef, api, opts, orientation, scrollPrev, scrollNext, canScrollPrev, canScrollNext])
+  }, [
+    carouselRef,
+    api,
+    opts,
+    orientation,
+    scrollPrev,
+    scrollNext,
+    canScrollPrev,
+    canScrollNext,
+  ])
 
   return (
     <CarouselContext value={value}>
       <div
         onKeyDownCapture={handleKeyDown}
         className={cn('relative', className)}
+        // biome-ignore lint/a11y/useSemanticElements: valid for use case
         role="region"
         aria-roledescription="carousel"
         data-slot="carousel"
-        {...props}
-      >
+        {...props}>
         {children}
       </div>
     </CarouselContext>
@@ -138,10 +154,13 @@ function CarouselContent({ className, ...props }: ComponentProps<'div'>) {
     <div
       ref={carouselRef}
       className="overflow-hidden"
-      data-slot="carousel-content"
-    >
+      data-slot="carousel-content">
       <div
-        className={cn('flex', orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col', className)}
+        className={cn(
+          'flex',
+          orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
+          className,
+        )}
         {...props}
       />
     </div>
@@ -156,7 +175,11 @@ function CarouselItem({ className, ...props }: ComponentProps<'div'>) {
       role="group"
       aria-roledescription="slide"
       data-slot="carousel-item"
-      className={cn('min-w-0 shrink-0 grow-0 basis-full', orientation === 'horizontal' ? 'pl-4' : 'pt-4', className)}
+      className={cn(
+        'min-w-0 shrink-0 grow-0 basis-full',
+        orientation === 'horizontal' ? 'pl-4' : 'pt-4',
+        className,
+      )}
       {...props}
     />
   )
@@ -175,14 +198,17 @@ function CarouselPrevious({
       data-slot="carousel-previous"
       variant={variant}
       size={size}
-      className={cn('absolute size-8', orientation === 'horizontal' ? 'top-1/2 -left-12 -translate-y-1/2' : '-top-12 left-1/2 -translate-x-1/2 rotate-90', className)}
+      className={cn(
+        'absolute size-8',
+        orientation === 'horizontal'
+          ? '-left-12 -translate-y-1/2 top-1/2'
+          : '-top-12 -translate-x-1/2 left-1/2 rotate-90',
+        className,
+      )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
-      {...props}
-    >
-      <svg
-        className="iconify ph--arrow-left size-4"
-      />
+      {...props}>
+      <svg className="iconify ph--arrow-left size-4" />
       <span className="sr-only">Previous slide</span>
     </Button>
   )
@@ -201,14 +227,17 @@ function CarouselNext({
       data-slot="carousel-next"
       variant={variant}
       size={size}
-      className={cn('absolute size-8', orientation === 'horizontal' ? 'top-1/2 -right-12 -translate-y-1/2' : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90', className)}
+      className={cn(
+        'absolute size-8',
+        orientation === 'horizontal'
+          ? '-right-12 -translate-y-1/2 top-1/2'
+          : '-bottom-12 -translate-x-1/2 left-1/2 rotate-90',
+        className,
+      )}
       disabled={!canScrollNext}
       onClick={scrollNext}
-      {...props}
-    >
-      <svg
-        className="iconify ph--arrow-right size-4"
-      />
+      {...props}>
+      <svg className="iconify ph--arrow-right size-4" />
       <span className="sr-only">Next slide</span>
     </Button>
   )

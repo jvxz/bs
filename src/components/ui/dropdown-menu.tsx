@@ -1,28 +1,26 @@
 'use client'
-import type { ComponentProps } from 'react'
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
+import type { ComponentProps } from 'react'
 import { popoverStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
 
-function DropdownMenu({ ...props }: ComponentProps<typeof DropdownMenuPrimitive.Root>) {
+function DropdownMenu({
+  ...props
+}: ComponentProps<typeof DropdownMenuPrimitive.Root>) {
+  return <DropdownMenuPrimitive.Root data-slot="dropdown-menu" {...props} />
+}
+
+function DropdownMenuPortal({
+  ...props
+}: ComponentProps<typeof DropdownMenuPrimitive.Portal>) {
   return (
-    <DropdownMenuPrimitive.Root
-      data-slot="dropdown-menu"
-      {...props}
-    />
+    <DropdownMenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />
   )
 }
 
-function DropdownMenuPortal({ ...props }: ComponentProps<typeof DropdownMenuPrimitive.Portal>) {
-  return (
-    <DropdownMenuPrimitive.Portal
-      data-slot="dropdown-menu-portal"
-      {...props}
-    />
-  )
-}
-
-function DropdownMenuTrigger({ ...props }: ComponentProps<typeof DropdownMenuPrimitive.Trigger>) {
+function DropdownMenuTrigger({
+  ...props
+}: ComponentProps<typeof DropdownMenuPrimitive.Trigger>) {
   return (
     <DropdownMenuPrimitive.Trigger
       data-slot="dropdown-menu-trigger"
@@ -48,12 +46,11 @@ function DropdownMenuContent({
   )
 }
 
-function DropdownMenuGroup({ ...props }: ComponentProps<typeof DropdownMenuPrimitive.Group>) {
+function DropdownMenuGroup({
+  ...props
+}: ComponentProps<typeof DropdownMenuPrimitive.Group>) {
   return (
-    <DropdownMenuPrimitive.Group
-      data-slot="dropdown-menu-group"
-      {...props}
-    />
+    <DropdownMenuPrimitive.Group data-slot="dropdown-menu-group" {...props} />
   )
 }
 
@@ -88,13 +85,10 @@ function DropdownMenuCheckboxItem({
       data-slot="dropdown-menu-checkbox-item"
       className={cn(popoverStyles.item, className)}
       checked={checked}
-      {...props}
-    >
+      {...props}>
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
         <DropdownMenuPrimitive.ItemIndicator>
-          <svg
-            className="iconify ph--check size-4"
-          />
+          <svg className="iconify ph--check size-4" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -102,7 +96,9 @@ function DropdownMenuCheckboxItem({
   )
 }
 
-function DropdownMenuRadioGroup({ ...props }: ComponentProps<typeof DropdownMenuPrimitive.RadioGroup>) {
+function DropdownMenuRadioGroup({
+  ...props
+}: ComponentProps<typeof DropdownMenuPrimitive.RadioGroup>) {
   return (
     <DropdownMenuPrimitive.RadioGroup
       data-slot="dropdown-menu-radio-group"
@@ -120,13 +116,10 @@ function DropdownMenuRadioItem({
     <DropdownMenuPrimitive.RadioItem
       data-slot="dropdown-menu-radio-item"
       className={cn(popoverStyles.item, className)}
-      {...props}
-    >
+      {...props}>
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
         <DropdownMenuPrimitive.ItemIndicator>
-          <svg
-            className="iconify ph--circle size-2 fill-current"
-          />
+          <svg className="iconify ph--circle size-2 fill-current" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -145,7 +138,10 @@ function DropdownMenuLabel({
     <DropdownMenuPrimitive.Label
       data-slot="dropdown-menu-label"
       data-inset={inset}
-      className={cn('px-2 py-1 text-sm font-medium data-[inset]:pl-8', className)}
+      className={cn(
+        'px-2 py-1 font-medium text-sm data-[inset]:pl-8',
+        className,
+      )}
       {...props}
     />
   )
@@ -158,32 +154,29 @@ function DropdownMenuSeparator({
   return (
     <DropdownMenuPrimitive.Separator
       data-slot="dropdown-menu-separator"
-      className={cn('bg-border -mx-1 my-1 h-px', className)}
+      className={cn('-mx-1 my-1 h-px bg-border', className)}
       {...props}
     />
   )
 }
 
-function DropdownMenuShortcut({
-  className,
-  ...props
-}: ComponentProps<'span'>) {
+function DropdownMenuShortcut({ className, ...props }: ComponentProps<'span'>) {
   return (
     <span
       data-slot="dropdown-menu-shortcut"
-      className={cn('text-muted-foreground ml-auto text-xs tracking-widest', className)}
+      className={cn(
+        'ml-auto text-muted-foreground text-xs tracking-widest',
+        className,
+      )}
       {...props}
     />
   )
 }
 
-function DropdownMenuSub({ ...props }: ComponentProps<typeof DropdownMenuPrimitive.Sub>) {
-  return (
-    <DropdownMenuPrimitive.Sub
-      data-slot="dropdown-menu-sub"
-      {...props}
-    />
-  )
+function DropdownMenuSub({
+  ...props
+}: ComponentProps<typeof DropdownMenuPrimitive.Sub>) {
+  return <DropdownMenuPrimitive.Sub data-slot="dropdown-menu-sub" {...props} />
 }
 
 function DropdownMenuSubTrigger({
@@ -199,12 +192,9 @@ function DropdownMenuSubTrigger({
       data-slot="dropdown-menu-sub-trigger"
       data-inset={inset}
       className={cn(popoverStyles.item, className)}
-      {...props}
-    >
+      {...props}>
       {children}
-      <svg
-        className="iconify ph--caret-right ml-auto size-4"
-      />
+      <svg className="iconify ph--caret-right ml-auto size-4" />
     </DropdownMenuPrimitive.SubTrigger>
   )
 }

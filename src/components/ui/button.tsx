@@ -1,7 +1,7 @@
-import type { VariantProps } from 'class-variance-authority'
-import type { ComponentProps } from 'react'
 import { Slot } from '@radix-ui/react-slot'
+import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
+import type { ComponentProps } from 'react'
 import { interactiveStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
 import { Spinner } from './spinner'
@@ -61,8 +61,7 @@ function Button({
         isLoading && 'grid text-transparent [grid-template-areas:stack]',
         disabled && 'pointer-events-none',
       )}
-      {...props}
-    >
+      {...props}>
       {children}
       {isLoading && (
         <span className="absolute inset-0 grid place-items-center">

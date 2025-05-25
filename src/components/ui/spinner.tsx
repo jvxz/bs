@@ -2,11 +2,7 @@ import type { SVGProps } from 'react'
 
 export function Spinner(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      viewBox="0 0 100 100"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" {...props}>
       <style>
         {
           '@keyframes spinner-fade{0%{opacity:1}to{opacity:.1}}.spinner-line{animation:spinner-fade 1.2s linear infinite;stroke:var(--muted-foreground);stroke-linecap:round}'

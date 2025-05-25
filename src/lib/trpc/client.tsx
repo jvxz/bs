@@ -1,11 +1,11 @@
 'use client'
 import type { QueryClient } from '@tanstack/react-query'
-import type { AppRouter } from './server'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { createTRPCClient, httpBatchLink } from '@trpc/client'
 import { createTRPCContext } from '@trpc/tanstack-react-query'
 import { useState } from 'react'
 import { makeQueryClient } from './query-client'
+import type { AppRouter } from './server'
 
 export const { TRPCProvider, useTRPC } = createTRPCContext<AppRouter>()
 
@@ -28,7 +28,9 @@ function getUrl() {
   return `${base}/api/trpc`
 }
 
-export function TRPCReactProvider(props: Readonly<{ children: React.ReactNode }>) {
+export function TRPCReactProvider(
+  props: Readonly<{ children: React.ReactNode }>,
+) {
   const queryClient = getQueryClient()
   const [trpcClient] = useState(() =>
     createTRPCClient<AppRouter>({
@@ -37,13 +39,11 @@ export function TRPCReactProvider(props: Readonly<{ children: React.ReactNode }>
           url: getUrl(),
         }),
       ],
-    }))
+    }),
+  )
   return (
     <QueryClientProvider client={queryClient}>
-      <TRPCProvider
-        trpcClient={trpcClient}
-        queryClient={queryClient}
-      >
+      <TRPCProvider trpcClient={trpcClient} queryClient={queryClient}>
         {props.children}
       </TRPCProvider>
     </QueryClientProvider>

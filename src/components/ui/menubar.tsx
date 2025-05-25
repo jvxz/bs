@@ -1,6 +1,6 @@
 'use client'
-import type { ComponentProps } from 'react'
 import * as MenubarPrimitive from '@radix-ui/react-menubar'
+import type { ComponentProps } from 'react'
 import { interactiveStyles, popoverStyles, staticStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
 
@@ -22,39 +22,29 @@ function Menubar({
   )
 }
 
-function MenubarMenu({ ...props }: ComponentProps<typeof MenubarPrimitive.Menu>) {
-  return (
-    <MenubarPrimitive.Menu
-      data-slot="menubar-menu"
-      {...props}
-    />
-  )
+function MenubarMenu({
+  ...props
+}: ComponentProps<typeof MenubarPrimitive.Menu>) {
+  return <MenubarPrimitive.Menu data-slot="menubar-menu" {...props} />
 }
 
-function MenubarGroup({ ...props }: ComponentProps<typeof MenubarPrimitive.Group>) {
-  return (
-    <MenubarPrimitive.Group
-      data-slot="menubar-group"
-      {...props}
-    />
-  )
+function MenubarGroup({
+  ...props
+}: ComponentProps<typeof MenubarPrimitive.Group>) {
+  return <MenubarPrimitive.Group data-slot="menubar-group" {...props} />
 }
 
-function MenubarPortal({ ...props }: ComponentProps<typeof MenubarPrimitive.Portal>) {
-  return (
-    <MenubarPrimitive.Portal
-      data-slot="menubar-portal"
-      {...props}
-    />
-  )
+function MenubarPortal({
+  ...props
+}: ComponentProps<typeof MenubarPrimitive.Portal>) {
+  return <MenubarPrimitive.Portal data-slot="menubar-portal" {...props} />
 }
 
-function MenubarRadioGroup({ ...props }: ComponentProps<typeof MenubarPrimitive.RadioGroup>) {
+function MenubarRadioGroup({
+  ...props
+}: ComponentProps<typeof MenubarPrimitive.RadioGroup>) {
   return (
-    <MenubarPrimitive.RadioGroup
-      data-slot="menubar-radio-group"
-      {...props}
-    />
+    <MenubarPrimitive.RadioGroup data-slot="menubar-radio-group" {...props} />
   )
 }
 
@@ -115,10 +105,7 @@ function MenubarItem({
       data-slot="menubar-item"
       data-inset={inset}
       data-variant={variant}
-      className={cn(
-        popoverStyles.item,
-        className,
-      )}
+      className={cn(popoverStyles.item, className)}
       {...props}
     />
   )
@@ -133,19 +120,12 @@ function MenubarCheckboxItem({
   return (
     <MenubarPrimitive.CheckboxItem
       data-slot="menubar-checkbox-item"
-      className={cn(
-        popoverStyles.item,
-        'pl-8',
-        className,
-      )}
+      className={cn(popoverStyles.item, 'pl-8', className)}
       checked={checked}
-      {...props}
-    >
+      {...props}>
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
         <MenubarPrimitive.ItemIndicator>
-          <svg
-            className="iconify ph--check size-4"
-          />
+          <svg className="iconify ph--check size-4" />
         </MenubarPrimitive.ItemIndicator>
       </span>
       {children}
@@ -161,18 +141,11 @@ function MenubarRadioItem({
   return (
     <MenubarPrimitive.RadioItem
       data-slot="menubar-radio-item"
-      className={cn(
-        popoverStyles.item,
-        'pl-8',
-        className,
-      )}
-      {...props}
-    >
+      className={cn(popoverStyles.item, 'pl-8', className)}
+      {...props}>
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
         <MenubarPrimitive.ItemIndicator>
-          <svg
-            className="iconify ph--circle size-2 fill-current"
-          />
+          <svg className="iconify ph--circle size-2 fill-current" />
         </MenubarPrimitive.ItemIndicator>
       </span>
       {children}
@@ -192,7 +165,7 @@ function MenubarLabel({
       data-slot="menubar-label"
       data-inset={inset}
       className={cn(
-        'px-2 py-1.5 text-sm font-medium data-[inset]:pl-8',
+        'px-2 py-1.5 font-medium text-sm data-[inset]:pl-8',
         className,
       )}
       {...props}
@@ -207,21 +180,18 @@ function MenubarSeparator({
   return (
     <MenubarPrimitive.Separator
       data-slot="menubar-separator"
-      className={cn('bg-border -mx-1 my-1 h-px', className)}
+      className={cn('-mx-1 my-1 h-px bg-border', className)}
       {...props}
     />
   )
 }
 
-function MenubarShortcut({
-  className,
-  ...props
-}: ComponentProps<'span'>) {
+function MenubarShortcut({ className, ...props }: ComponentProps<'span'>) {
   return (
     <span
       data-slot="menubar-shortcut"
       className={cn(
-        'text-muted-foreground ml-auto text-xs tracking-widest',
+        'ml-auto text-muted-foreground text-xs tracking-widest',
         className,
       )}
       {...props}
@@ -230,12 +200,7 @@ function MenubarShortcut({
 }
 
 function MenubarSub({ ...props }: ComponentProps<typeof MenubarPrimitive.Sub>) {
-  return (
-    <MenubarPrimitive.Sub
-      data-slot="menubar-sub"
-      {...props}
-    />
-  )
+  return <MenubarPrimitive.Sub data-slot="menubar-sub" {...props} />
 }
 
 function MenubarSubTrigger({
@@ -250,17 +215,10 @@ function MenubarSubTrigger({
     <MenubarPrimitive.SubTrigger
       data-slot="menubar-sub-trigger"
       data-inset={inset}
-      className={cn(
-        popoverStyles.item,
-        'data-[inset]:pl-8',
-        className,
-      )}
-      {...props}
-    >
+      className={cn(popoverStyles.item, 'data-[inset]:pl-8', className)}
+      {...props}>
       {children}
-      <svg
-        className="iconify ph--caret-right ml-auto h-4 w-4"
-      />
+      <svg className="iconify ph--caret-right ml-auto h-4 w-4" />
     </MenubarPrimitive.SubTrigger>
   )
 }

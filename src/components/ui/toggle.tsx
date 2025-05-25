@@ -1,18 +1,27 @@
 'use client'
-import type { VariantProps } from 'class-variance-authority'
-import type { ComponentProps } from 'react'
 import * as TogglePrimitive from '@radix-ui/react-toggle'
+import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
+import type { ComponentProps } from 'react'
 import { interactiveStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
 
 const toggleVariants = cva(
-  cn(interactiveStyles.base, `${interactiveStyles.base} data-[state=on]:bg-accent data-[state=on]:text-accent-foreground p-0`),
+  cn(
+    interactiveStyles.base,
+    `${interactiveStyles.base} data-[state=on]:bg-accent data-[state=on]:text-accent-foreground p-0`,
+  ),
   {
     variants: {
       variant: {
-        default: [interactiveStyles.variant.ghost, 'data-[state=on]:bg-muted m-0 border border-transparent'],
-        outline: [interactiveStyles.variant.outline, 'data-[state=on]:bg-muted data-[state=on]:border-primary/30 m-0'],
+        default: [
+          interactiveStyles.variant.ghost,
+          'data-[state=on]:bg-muted m-0 border border-transparent',
+        ],
+        outline: [
+          interactiveStyles.variant.outline,
+          'data-[state=on]:bg-muted data-[state=on]:border-primary/30 m-0',
+        ],
       },
       size: {
         default: [interactiveStyles.size.default, 'text-sm'],
@@ -37,11 +46,13 @@ function Toggle({
   return (
     <TogglePrimitive.Root
       data-slot="toggle"
-      className={cn(toggleVariants({
-        variant,
-        size,
-        className,
-      }))}
+      className={cn(
+        toggleVariants({
+          variant,
+          size,
+          className,
+        }),
+      )}
       {...props}
     />
   )

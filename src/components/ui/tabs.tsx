@@ -1,6 +1,6 @@
 'use client'
-import type { ComponentProps } from 'react'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
+import type { ComponentProps } from 'react'
 import { staticStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
 
@@ -43,8 +43,8 @@ function TabsTrigger({
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        'text-muted-foreground relative inline-flex flex-1 cursor-default items-center justify-center border-0 bg-transparent py-1 text-sm data-[state=active]:text-foreground',
-        'data-[state=active]:before:bg-foreground before:absolute before:inset-x-0 before:top-[calc(100%-1px)] before:h-px before:rounded-full before:bg-transparent before:transition-all before:duration-100 before:ease-in-out before:content-[""]',
+        'relative inline-flex flex-1 cursor-default items-center justify-center border-0 bg-transparent py-1 text-muted-foreground text-sm data-[state=active]:text-foreground',
+        'before:absolute before:inset-x-0 before:top-[calc(100%-1px)] before:h-px before:rounded-full before:bg-transparent before:transition-all before:duration-100 before:ease-in-out before:content-[""] data-[state=active]:before:bg-foreground',
         className,
       )}
       {...props}
@@ -65,9 +65,4 @@ function TabsContent({
   )
 }
 
-export {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-}
+export { Tabs, TabsContent, TabsList, TabsTrigger }

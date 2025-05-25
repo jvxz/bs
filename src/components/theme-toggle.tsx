@@ -9,8 +9,7 @@ function ThemeToggle() {
   return (
     <Button
       size="icon"
-      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-    >
+      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
       {resolvedTheme === 'dark' ? <IconSun /> : <IconMoon />}
     </Button>
   )

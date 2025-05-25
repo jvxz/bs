@@ -1,13 +1,17 @@
 'use client'
-/* eslint-disable react/no-array-index-key */
 import type { PrismTheme } from 'prism-react-renderer'
-import type { ComponentProps, ReactNode } from 'react'
 import { Highlight } from 'prism-react-renderer'
+import type { ComponentProps, ReactNode } from 'react'
 import { useCallback, useState } from 'react'
 import { staticStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
 import { Button } from './button'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './dropdown-menu'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './dropdown-menu'
 
 interface CodeBlockProps {
   children: ReactNode
@@ -24,8 +28,7 @@ function CodeBlock({ children, className }: CodeBlockProps) {
         staticStyles.variant.default,
         'relative p-0',
         className,
-      )}
-    >
+      )}>
       {children}
     </div>
   )
@@ -38,10 +41,9 @@ function CodeBlockHeader({ children, className }: ComponentProps<'div'>) {
       className={cn(
         staticStyles.base,
         staticStyles.variant.default,
-        'rounded-x-none peer flex h-12 flex-row items-center justify-between rounded-b-none border-x-0 border-t-0 px-4 py-2 text-sm',
+        'peer flex h-12 flex-row items-center justify-between rounded-x-none rounded-b-none border-x-0 border-t-0 px-4 py-2 text-sm',
         className,
-      )}
-    >
+      )}>
       {children}
     </div>
   )
@@ -172,7 +174,12 @@ interface CodeBlockContentProps {
   copyButton?: boolean
 }
 
-function CodeBlockContent({ children, theme = defaultTheme, lineNumbers = false, copyButton = true }: CodeBlockContentProps) {
+function CodeBlockContent({
+  children,
+  theme = defaultTheme,
+  lineNumbers = false,
+  copyButton = true,
+}: CodeBlockContentProps) {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = useCallback(() => {
@@ -183,11 +190,7 @@ function CodeBlockContent({ children, theme = defaultTheme, lineNumbers = false,
 
   return (
     <>
-      <Highlight
-        code={children}
-        language="ts"
-        theme={theme}
-      >
+      <Highlight code={children} language="ts" theme={theme}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre
             data-slot="code-block-content"
@@ -197,18 +200,20 @@ function CodeBlockContent({ children, theme = defaultTheme, lineNumbers = false,
               staticStyles.variant.default,
               'space-y-1 border-0 font-mono text-sm peer-[*]:rounded-t-none dark:bg-black/80',
               className,
-            )}
-          >
+            )}>
             {tokens.map((line, i) => (
               <div
+                // biome-ignore lint/suspicious/noArrayIndexKey: key never changes
                 key={i}
                 {...getLineProps({
                   line,
-                })}
-              >
-                {lineNumbers && <span className="pr-4 opacity-50">{i + 1}</span>}
+                })}>
+                {lineNumbers && (
+                  <span className="pr-4 opacity-50">{i + 1}</span>
+                )}
                 {line.map((token, key) => (
                   <span
+                    // biome-ignore lint/suspicious/noArrayIndexKey: key never changes
                     key={key}
                     {...getTokenProps({
                       token,
@@ -222,14 +227,16 @@ function CodeBlockContent({ children, theme = defaultTheme, lineNumbers = false,
       </Highlight>
       {copyButton && (
         <Button
-          className="absolute top-2 right-2 opacity-75 peer-[*]:top-14 hover:opacity-100"
+          className="absolute top-2 right-2 opacity-75 hover:opacity-100 peer-[*]:top-14"
           size="icon"
           variant="ghost"
           onClick={handleCopy}
-          aria-label={copied ? 'Copied' : 'Copy'}
-        >
+          aria-label={copied ? 'Copied' : 'Copy'}>
           <svg
-            className={cn('iconify', copied ? 'icon-[ph--check]' : 'icon-[ph--copy]')}
+            className={cn(
+              'iconify',
+              copied ? 'icon-[ph--check]' : 'icon-[ph--copy]',
+            )}
           />
         </Button>
       )}
@@ -238,47 +245,32 @@ function CodeBlockContent({ children, theme = defaultTheme, lineNumbers = false,
 }
 
 function CodeBlockMenu({ ...props }: ComponentProps<typeof DropdownMenu>) {
-  return (
-    <DropdownMenu
-      data-slot="code-block-menu"
-      {...props}
-    />
-  )
+  return <DropdownMenu data-slot="code-block-menu" {...props} />
 }
 
-function CodeBlockMenuTrigger({ children, ...props }: ComponentProps<typeof DropdownMenuTrigger>) {
+function CodeBlockMenuTrigger({
+  children,
+  ...props
+}: ComponentProps<typeof DropdownMenuTrigger>) {
   return (
-    <DropdownMenuTrigger
-      data-slot="code-block-menu-trigger"
-      asChild
-      {...props}
-    >
-      <Button
-        variant="outline"
-        className="-mr-2"
-      >
+    <DropdownMenuTrigger data-slot="code-block-menu-trigger" asChild {...props}>
+      <Button variant="outline" className="-mr-2">
         {children}
       </Button>
     </DropdownMenuTrigger>
   )
 }
 
-function CodeBlockMenuContent({ ...props }: ComponentProps<typeof DropdownMenuContent>) {
-  return (
-    <DropdownMenuContent
-      data-slot="code-block-menu-content"
-      {...props}
-    />
-  )
+function CodeBlockMenuContent({
+  ...props
+}: ComponentProps<typeof DropdownMenuContent>) {
+  return <DropdownMenuContent data-slot="code-block-menu-content" {...props} />
 }
 
-function CodeBlockMenuItem({ ...props }: ComponentProps<typeof DropdownMenuItem>) {
-  return (
-    <DropdownMenuItem
-      data-slot="code-block-menu-item"
-      {...props}
-    />
-  )
+function CodeBlockMenuItem({
+  ...props
+}: ComponentProps<typeof DropdownMenuItem>) {
+  return <DropdownMenuItem data-slot="code-block-menu-item" {...props} />
 }
 
 export {

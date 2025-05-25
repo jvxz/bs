@@ -9,14 +9,13 @@ export const metadata: Metadata = {
   description: `${name}'s description`,
 }
 
-export default function RootLayout({ children }: Readonly<{
+export default function RootLayout({
+  children,
+}: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${sans.variable} antialiased ${mono.variable}`}
-    >
+    <html lang="en" className={`${sans.variable} antialiased ${mono.variable}`}>
       {process.env.NODE_ENV === 'development' && (
         <head>
           <script
@@ -27,9 +26,7 @@ export default function RootLayout({ children }: Readonly<{
         </head>
       )}
       <body className="subpixel-antialiased">
-        <Providers>
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

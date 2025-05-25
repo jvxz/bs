@@ -6,7 +6,12 @@ function Card({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
       data-slot="card"
-      className={cn(staticStyles.base, staticStyles.variant.default, 'flex flex-col gap-5', className)}
+      className={cn(
+        staticStyles.base,
+        staticStyles.variant.default,
+        'flex flex-col gap-5',
+        className,
+      )}
       {...props}
     />
   )
@@ -26,7 +31,7 @@ function CardTitle({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
       data-slot="card-title"
-      className={cn('text-lg leading-none font-medium', className)}
+      className={cn('font-medium text-lg leading-none', className)}
       {...props}
     />
   )
@@ -43,12 +48,7 @@ function CardDescription({ className, ...props }: ComponentProps<'div'>) {
 }
 
 function CardContent({ className, ...props }: ComponentProps<'div'>) {
-  return (
-    <div
-      data-slot="card-content"
-      {...props}
-    />
-  )
+  return <div data-slot="card-content" {...props} />
 }
 
 function CardFooter({ className, ...props }: ComponentProps<'div'>) {
@@ -61,11 +61,4 @@ function CardFooter({ className, ...props }: ComponentProps<'div'>) {
   )
 }
 
-export {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-}
+export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }

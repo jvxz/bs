@@ -1,55 +1,48 @@
 'use client'
-import type { ComponentProps } from 'react'
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
+import type { ComponentProps } from 'react'
 import { popoverStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
 
-function ContextMenu({ ...props }: ComponentProps<typeof ContextMenuPrimitive.Root>) {
+function ContextMenu({
+  ...props
+}: ComponentProps<typeof ContextMenuPrimitive.Root>) {
+  return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />
+}
+
+function ContextMenuTrigger({
+  ...props
+}: ComponentProps<typeof ContextMenuPrimitive.Trigger>) {
   return (
-    <ContextMenuPrimitive.Root
-      data-slot="context-menu"
-      {...props}
-    />
+    <ContextMenuPrimitive.Trigger data-slot="context-menu-trigger" {...props} />
   )
 }
 
-function ContextMenuTrigger({ ...props }: ComponentProps<typeof ContextMenuPrimitive.Trigger>) {
+function ContextMenuGroup({
+  ...props
+}: ComponentProps<typeof ContextMenuPrimitive.Group>) {
   return (
-    <ContextMenuPrimitive.Trigger
-      data-slot="context-menu-trigger"
-      {...props}
-    />
+    <ContextMenuPrimitive.Group data-slot="context-menu-group" {...props} />
   )
 }
 
-function ContextMenuGroup({ ...props }: ComponentProps<typeof ContextMenuPrimitive.Group>) {
+function ContextMenuPortal({
+  ...props
+}: ComponentProps<typeof ContextMenuPrimitive.Portal>) {
   return (
-    <ContextMenuPrimitive.Group
-      data-slot="context-menu-group"
-      {...props}
-    />
+    <ContextMenuPrimitive.Portal data-slot="context-menu-portal" {...props} />
   )
 }
 
-function ContextMenuPortal({ ...props }: ComponentProps<typeof ContextMenuPrimitive.Portal>) {
-  return (
-    <ContextMenuPrimitive.Portal
-      data-slot="context-menu-portal"
-      {...props}
-    />
-  )
+function ContextMenuSub({
+  ...props
+}: ComponentProps<typeof ContextMenuPrimitive.Sub>) {
+  return <ContextMenuPrimitive.Sub data-slot="context-menu-sub" {...props} />
 }
 
-function ContextMenuSub({ ...props }: ComponentProps<typeof ContextMenuPrimitive.Sub>) {
-  return (
-    <ContextMenuPrimitive.Sub
-      data-slot="context-menu-sub"
-      {...props}
-    />
-  )
-}
-
-function ContextMenuRadioGroup({ ...props }: ComponentProps<typeof ContextMenuPrimitive.RadioGroup>) {
+function ContextMenuRadioGroup({
+  ...props
+}: ComponentProps<typeof ContextMenuPrimitive.RadioGroup>) {
   return (
     <ContextMenuPrimitive.RadioGroup
       data-slot="context-menu-radio-group"
@@ -71,12 +64,9 @@ function ContextMenuSubTrigger({
       data-slot="context-menu-sub-trigger"
       data-inset={inset}
       className={cn(popoverStyles.item, className)}
-      {...props}
-    >
+      {...props}>
       {children}
-      <svg
-        className="iconify ph--caret-right ml-auto"
-      />
+      <svg className="iconify ph--caret-right ml-auto" />
     </ContextMenuPrimitive.SubTrigger>
   )
 }
@@ -142,13 +132,10 @@ function ContextMenuCheckboxItem({
       data-slot="context-menu-checkbox-item"
       className={cn(popoverStyles.item, className)}
       checked={checked}
-      {...props}
-    >
+      {...props}>
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
         <ContextMenuPrimitive.ItemIndicator>
-          <svg
-            className="iconify ph--check size-4"
-          />
+          <svg className="iconify ph--check size-4" />
         </ContextMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -165,17 +152,11 @@ function ContextMenuRadioItem({
     <ContextMenuPrimitive.RadioItem
       data-slot="context-menu-radio-item"
       className={cn(popoverStyles.item, className)}
-      {...props}
-    >
-      <span className={`
-        pointer-events-none absolute left-2 flex size-3.5 items-center
-        justify-center
-      `}
-      >
+      {...props}>
+      <span
+        className={`pointer-events-none absolute left-2 flex size-3.5 items-center justify-center `}>
         <ContextMenuPrimitive.ItemIndicator>
-          <svg
-            className="iconify ph--circle size-2 fill-current"
-          />
+          <svg className="iconify ph--circle size-2 fill-current" />
         </ContextMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -195,10 +176,7 @@ function ContextMenuLabel({
       data-slot="context-menu-label"
       data-inset={inset}
       className={cn(
-        `
-          text-foreground px-2 py-1.5 text-sm
-          data-[inset]:pl-8
-        `,
+        `px-2 py-1.5 text-foreground text-sm data-[inset]:pl-8 `,
         className,
       )}
       {...props}
@@ -213,7 +191,7 @@ function ContextMenuSeparator({
   return (
     <ContextMenuPrimitive.Separator
       data-slot="context-menu-separator"
-      className={cn('bg-border -mx-1 my-1 h-px', className)}
+      className={cn('-mx-1 my-1 h-px bg-border', className)}
       {...props}
     />
   )
@@ -227,7 +205,7 @@ function ContextMenuShortcut({
     <span
       data-slot="context-menu-shortcut"
       className={cn(
-        'text-muted-foreground ml-auto text-xs tracking-widest',
+        'ml-auto text-muted-foreground text-xs tracking-widest',
         className,
       )}
       {...props}

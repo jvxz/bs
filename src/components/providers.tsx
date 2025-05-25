@@ -1,6 +1,6 @@
 'use client'
-import type { ThemeProviderProps } from 'next-themes'
 import dynamic from 'next/dynamic'
+import type { ThemeProviderProps } from 'next-themes'
 import { TRPCReactProvider } from '@/lib/trpc/client'
 import { Toaster } from './ui/sonner'
 
@@ -19,8 +19,7 @@ function Providers({ children, ...props }: ThemeProviderProps) {
         attribute="class"
         defaultTheme="system"
         enableSystem
-        {...props}
-      >
+        {...props}>
         {children}
         <Toaster />
       </NextThemesProvider>

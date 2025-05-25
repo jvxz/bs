@@ -1,10 +1,15 @@
 'use client'
 import type * as LabelPrimitive from '@radix-ui/react-label'
-import type { ComponentProps } from 'react'
-import type { ControllerProps, FieldPath, FieldValues } from 'react-hook-form'
 import { Slot } from '@radix-ui/react-slot'
+import type { ComponentProps } from 'react'
 import { createContext, useId, useMemo } from 'react'
-import { Controller, FormProvider, useFormContext, useFormState } from 'react-hook-form'
+import type { ControllerProps, FieldPath, FieldValues } from 'react-hook-form'
+import {
+  Controller,
+  FormProvider,
+  useFormContext,
+  useFormState,
+} from 'react-hook-form'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
 
@@ -17,24 +22,23 @@ interface FormFieldContextValue<
   name: TName
 }
 
-const FormFieldContext = createContext<FormFieldContextValue>({
-} as FormFieldContextValue)
+const FormFieldContext = createContext<FormFieldContextValue>(
+  {} as FormFieldContextValue,
+)
 
-const FormItemContext = createContext<FormItemContextValue>({
-} as FormItemContextValue)
+const FormItemContext = createContext<FormItemContextValue>(
+  {} as FormItemContextValue,
+)
 
 function FormField<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({ ...props }: ControllerProps<TFieldValues, TName>) {
-  const value = useMemo(
-    () => {
-      return {
-        name: props.name,
-      }
-    },
-    [props.name],
-  )
+  const value = useMemo(() => {
+    return {
+      name: props.name,
+    }
+  }, [props.name])
 
   return (
     <FormFieldContext value={value}>
@@ -75,14 +79,11 @@ interface FormItemContextValue {
 function FormItem({ className, ...props }: ComponentProps<'div'>) {
   const id = useId()
 
-  const value = useMemo(
-    () => {
-      return {
-        id,
-      }
-    },
-    [id],
-  )
+  const value = useMemo(() => {
+    return {
+      id,
+    }
+  }, [id])
 
   return (
     <FormItemContext value={value}>
@@ -113,8 +114,7 @@ function FormLabel({
 }
 
 function FormControl({ ...props }: ComponentProps<typeof Slot>) {
-  const { error, formItemId, formDescriptionId, formMessageId }
-    = useFormField()
+  const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
 
   return (
     <Slot
@@ -157,8 +157,7 @@ function FormMessage({ className, ...props }: ComponentProps<'p'>) {
       data-slot="form-message"
       id={formMessageId}
       className={cn('text-destructive-foreground text-sm', className)}
-      {...props}
-    >
+      {...props}>
       {body}
     </p>
   )

@@ -7,8 +7,7 @@ function handler(req: Request) {
     req,
     router: appRouter,
     createContext: () => {
-      return {
-      }
+      return {}
     },
   })
 }

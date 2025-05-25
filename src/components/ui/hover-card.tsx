@@ -1,10 +1,14 @@
 'use client'
-import type { ComponentProps } from 'react'
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card'
+import type { ComponentProps } from 'react'
 import { popoverStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
 
-function HoverCard({ openDelay = 200, closeDelay = 100, ...props }: ComponentProps<typeof HoverCardPrimitive.Root>) {
+function HoverCard({
+  openDelay = 200,
+  closeDelay = 100,
+  ...props
+}: ComponentProps<typeof HoverCardPrimitive.Root>) {
   return (
     <HoverCardPrimitive.Root
       data-slot="hover-card"
@@ -15,12 +19,11 @@ function HoverCard({ openDelay = 200, closeDelay = 100, ...props }: ComponentPro
   )
 }
 
-function HoverCardTrigger({ ...props }: ComponentProps<typeof HoverCardPrimitive.Trigger>) {
+function HoverCardTrigger({
+  ...props
+}: ComponentProps<typeof HoverCardPrimitive.Trigger>) {
   return (
-    <HoverCardPrimitive.Trigger
-      data-slot="hover-card-trigger"
-      {...props}
-    />
+    <HoverCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
   )
 }
 
@@ -41,8 +44,4 @@ function HoverCardContent({
   )
 }
 
-export {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-}
+export { HoverCard, HoverCardContent, HoverCardTrigger }
