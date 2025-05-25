@@ -1,66 +1,76 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.0.0-beta.5/schema.json",
-	"files": {
-		"ignoreUnknown": true
-	},
-	"vcs": {
-		"enabled": false,
-		"clientKind": "git",
-		"useIgnoreFile": false
-	},
-	"formatter": {
-		"enabled": true,
-		"indentStyle": "space"
-	},
-	"linter": {
-		"domains": {
-			"react": "recommended"
-		},
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"nursery": {
-				"useSortedClasses": {
-					"fix": "safe",
-					"level": "warn",
-					"options": {}
-				}
-			}
-		}
-	},
-	"javascript": {
-		"formatter": {
-			"quoteStyle": "single",
-			"arrowParentheses": "asNeeded",
-			"semicolons": "asNeeded",
-			"trailingCommas": "none",
-			"bracketSameLine": true
-		}
-	},
-	"assist": {
-		"enabled": true,
-		"actions": {
-			"source": {
-				"organizeImports": "on",
-				"useSortedProperties": "on",
-				"recommended": true
-			}
-		}
-	},
-	"overrides": [
-		{
-			"includes": [
-				".next/**",
-				"node_modules/**",
-				"public/**",
-				"dist/**"
-			],
-			"linter": {
-				"enabled": false
-			},
-			"formatter": {
-				"enabled": false
-			}
-		}
-	]
+  "$schema": "https://biomejs.dev/schemas/2.0.0-beta.5/schema.json",
+  "files": {
+    "ignoreUnknown": true
+  },
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": false
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space"
+  },
+  "linter": {
+    "domains": {
+      "react": "recommended",
+      "next": "recommended"
+    },
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "nursery": {
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "warn",
+          "options": {}
+        }
+      },
+      "suspicious": {
+        "noConsole": {
+          "level": "error",
+          "options": {
+            "allow": ["warn", "error"]
+          }
+        }
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "arrowParentheses": "asNeeded",
+      "semicolons": "asNeeded",
+      "trailingCommas": "all",
+      "bracketSameLine": true
+    }
+  },
+  "json": {
+    "formatter": {
+      "trailingCommas": "all",
+      "enabled": true
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "useSortedProperties": "on",
+        "recommended": true
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": [".next/**", "node_modules/**", "public/**", "dist/**"],
+      "linter": {
+        "enabled": false
+      },
+      "formatter": {
+        "enabled": false
+      }
+    }
+  ]
 }
