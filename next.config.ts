@@ -1,3 +1,4 @@
+import { codeInspectorPlugin } from 'code-inspector-plugin'
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
@@ -9,6 +10,10 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  webpack: config => {
+    config.plugins.push(codeInspectorPlugin({ bundler: 'webpack' }))
+    return config
   },
 }
 
