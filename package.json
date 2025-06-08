@@ -9,7 +9,6 @@
     "lint": "biome check ./src"
   },
   "dependencies": {
-    "next": "15.3.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -57,6 +56,7 @@
     "code-inspector-plugin": "^0.20.12",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
+    "next": "15.3.3",
     "next-themes": "^0.4.6",
     "prism-react-renderer": "^2.4.1",
     "sonner": "^2.0.5",
