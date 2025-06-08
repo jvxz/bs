@@ -19,5 +19,5 @@ function TRPCData() {
   const trpc = useTRPC()
   const { data } = useSuspenseQuery(trpc.hello.queryOptions())
 
-  return <p>{data as string}</p>
+  return <p>{data}</p>
 }
