@@ -1,13 +1,10 @@
-import type { Metadata } from 'next'
 import { Providers } from '@/components/providers'
-import { mono, sans } from '@/lib/font'
-import { name } from '../../package.json'
 import './globals.css'
+import type { Metadata } from 'next'
+import { meta } from '@/lib/config'
+import { mono, sans } from '@/lib/font'
 
-export const metadata: Metadata = {
-  title: name,
-  description: `${name}'s description`,
-}
+export const metadata: Metadata = meta
 
 export default function RootLayout({
   children,
@@ -15,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${sans.variable} antialiased ${mono.variable}`}>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
       {process.env.NODE_ENV === 'development' && (
         <head>
           <script
@@ -25,7 +22,7 @@ export default function RootLayout({
           />
         </head>
       )}
-      <body className="subpixel-antialiased">
+      <body className="antialiased">
         <Providers>{children}</Providers>
       </body>
     </html>
