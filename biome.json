@@ -19,6 +19,13 @@
     },
     "enabled": true,
     "rules": {
+      "style": {
+        "useSelfClosingElements": {
+          "level": "warn",
+          "fix": "safe",
+          "options": {}
+        }
+      },
       "recommended": true,
       "nursery": {
         "useSortedClasses": {
