@@ -44,7 +44,8 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
+  --radius: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
   --radius-xl: calc(var(--radius) + 4px);
 
   @keyframes accordion-down {
@@ -99,6 +100,7 @@
   --border: hsl(223.8136 0.0001% 89.5577%);
   --input: hsl(223.8136 0.0001% 92.1478%);
   --ring: hsl(0 0% 0%);
+  --radius: 0.5rem;
 }
 
 .dark {
