@@ -1,8 +1,24 @@
 'use client'
+import {
+  defaultShouldDehydrateQuery,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 import dynamic from 'next/dynamic'
 import type { ThemeProviderProps } from 'next-themes'
-import { TRPCReactProvider } from '@/lib/trpc/client'
 import { Toaster } from './ui/sonner'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    dehydrate: {
+      shouldDehydrateQuery: query =>
+        defaultShouldDehydrateQuery(query) || query.state.status === 'pending',
+    },
+    queries: {
+      staleTime: 30 * 1000,
+    },
+  },
+})
 
 // prevent hydration errors
 const NextThemesProvider = dynamic(
@@ -14,7 +30,7 @@ const NextThemesProvider = dynamic(
 
 function Providers({ children, ...props }: ThemeProviderProps) {
   return (
-    <TRPCReactProvider>
+    <QueryClientProvider client={queryClient}>
       <NextThemesProvider
         attribute="class"
         defaultTheme="system"
@@ -23,7 +39,7 @@ function Providers({ children, ...props }: ThemeProviderProps) {
         {children}
         <Toaster />
       </NextThemesProvider>
-    </TRPCReactProvider>
+    </QueryClientProvider>
   )
 }
 
