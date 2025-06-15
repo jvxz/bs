@@ -1,34 +1,55 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.0.0-beta.6/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "recommended": true,
+        "useSortedKeys": "on",
+        "useSortedProperties": "on"
+      }
+    },
+    "enabled": true
+  },
   "files": {
     "ignoreUnknown": true
-  },
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": false
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space"
   },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "asNeeded",
+      "bracketSameLine": true,
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+      "trailingCommas": "all"
+    }
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "trailingCommas": "all"
+    }
+  },
   "linter": {
     "domains": {
-      "react": "recommended",
-      "next": "recommended"
+      "next": "recommended",
+      "react": "recommended"
     },
     "enabled": true,
     "rules": {
-      "style": {
-        "useSelfClosingElements": {
-          "level": "warn",
+      "nursery": {
+        "useSortedClasses": {
           "fix": "safe",
+          "level": "warn",
           "options": {}
         }
       },
       "recommended": true,
-      "nursery": {
-        "useSortedClasses": {
+      "style": {
+        "useSelfClosingElements": {
           "fix": "safe",
           "level": "warn",
           "options": {}
@@ -38,54 +59,26 @@
         "noConsole": {
           "level": "error",
           "options": {
-            "allow": [
-              "warn",
-              "error"
-            ]
+            "allow": ["warn", "error"]
           }
         }
       }
     }
   },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single",
-      "arrowParentheses": "asNeeded",
-      "semicolons": "asNeeded",
-      "trailingCommas": "all",
-      "bracketSameLine": true
-    }
-  },
-  "json": {
-    "formatter": {
-      "trailingCommas": "all",
-      "enabled": true
-    }
-  },
-  "assist": {
-    "enabled": true,
-    "actions": {
-      "source": {
-        "organizeImports": "on",
-        "useSortedProperties": "on",
-        "recommended": true
-      }
-    }
-  },
   "overrides": [
     {
-      "includes": [
-        ".next/**",
-        "node_modules/**",
-        "public/**",
-        "dist/**"
-      ],
-      "linter": {
+      "formatter": {
         "enabled": false
       },
-      "formatter": {
+      "includes": [".next/**", "node_modules/**", "public/**", "dist/**"],
+      "linter": {
         "enabled": false
       }
     }
-  ]
+  ],
+  "vcs": {
+    "clientKind": "git",
+    "enabled": false,
+    "useIgnoreFile": false
+  }
 }
