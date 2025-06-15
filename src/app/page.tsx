@@ -1,6 +1,6 @@
-'use client'
 import { Suspense } from 'react'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { client } from '@/lib/hono/client'
 
 export default function Page() {
   return (
@@ -13,6 +13,9 @@ export default function Page() {
   )
 }
 
-function HonoData() {
-  return <p>hello</p>
+async function HonoData() {
+  const res = await client.api.greeting.$get()
+  const data = await res.json()
+
+  return <p>{data.message}</p>
 }
