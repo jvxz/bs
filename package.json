@@ -15,10 +15,10 @@
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
+    "bumpp": "^10.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
-    "code-inspector-plugin": "^0.20.12",
     "embla-carousel-react": "^8.6.0",
     "hono": "^4.7.11",
     "hono-openapi": "^0.4.8",
@@ -42,8 +42,12 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "check": "tsc --noEmit",
+    "deploy": "pnpm lint && pnpm check && bumpp -p",
+    "deploy:force": "bumpp -p",
     "dev": "next dev --turbopack",
-    "lint": "biome check ./src",
+    "lint": "biome lint --changed",
+    "lint:all": "biome lint",
     "start": "next start"
   },
   "version": "0.0.0"
