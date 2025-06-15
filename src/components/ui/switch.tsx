@@ -1,5 +1,5 @@
 'use client'
-import * as SwitchPrimitive from '@radix-ui/react-switch'
+import { Switch as SwitchPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { interactiveStyles, staticStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'

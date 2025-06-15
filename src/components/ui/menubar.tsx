@@ -1,5 +1,5 @@
 'use client'
-import * as MenubarPrimitive from '@radix-ui/react-menubar'
+import { Menubar as MenubarPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { interactiveStyles, popoverStyles, staticStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
