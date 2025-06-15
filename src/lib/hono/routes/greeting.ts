@@ -1,8 +1,10 @@
-import { Hono } from 'hono'
+import { createHono } from '..'
 
-const app = new Hono()
+const app = createHono()
 
 export const greeting = app.get('/', async c => {
+  c.var.logger.info('waiting for 2 seconds...')
+
   await new Promise(resolve => setTimeout(resolve, 2000))
 
   return c.json({
