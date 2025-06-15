@@ -1,6 +1,6 @@
-import { createHono } from '..'
+import { createHonoApp } from '..'
 
-const app = createHono()
+const app = createHonoApp()
 
 export const greeting = app.get('/', async c => {
   c.var.logger.info('waiting for 2 seconds...')
