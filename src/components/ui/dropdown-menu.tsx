@@ -1,5 +1,5 @@
 'use client'
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
+import { DropdownMenu as DropdownMenuPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { popoverStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'

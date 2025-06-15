@@ -1,5 +1,5 @@
 'use client'
-import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
+import { RadioGroup as RadioGroupPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { interactiveStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'

@@ -1,5 +1,5 @@
 'use client'
-import * as SliderPrimitive from '@radix-ui/react-slider'
+import { Slider as SliderPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { useMemo } from 'react'
 import { interactiveStyles } from '@/lib/styles'

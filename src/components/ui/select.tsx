@@ -1,5 +1,5 @@
 'use client'
-import * as SelectPrimitive from '@radix-ui/react-select'
+import { Select as SelectPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { interactiveStyles, popoverStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'

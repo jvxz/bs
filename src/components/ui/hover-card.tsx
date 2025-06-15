@@ -1,5 +1,5 @@
 'use client'
-import * as HoverCardPrimitive from '@radix-ui/react-hover-card'
+import { HoverCard as HoverCardPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { popoverStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'

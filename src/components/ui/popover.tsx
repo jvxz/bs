@@ -1,5 +1,5 @@
 'use client'
-import * as PopoverPrimitive from '@radix-ui/react-popover'
+import { Popover as PopoverPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { popoverStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'

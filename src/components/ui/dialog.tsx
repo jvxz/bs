@@ -1,5 +1,5 @@
 'use client'
-import * as DialogPrimitive from '@radix-ui/react-dialog'
+import { Dialog as DialogPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { interactiveStyles, overlayStyles, staticStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'

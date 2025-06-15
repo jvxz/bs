@@ -1,5 +1,5 @@
 'use client'
-import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
+import { ContextMenu as ContextMenuPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { popoverStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
