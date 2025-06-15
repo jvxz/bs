@@ -54,6 +54,7 @@ function Slider({
         (_, index) => (
           <SliderPrimitive.Thumb
             data-slot="slider-thumb"
+            // biome-ignore lint/suspicious/noArrayIndexKey: intended
             key={index}
             className={cn(
               interactiveStyles.base,

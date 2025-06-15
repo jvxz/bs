@@ -21,8 +21,8 @@ function ToggleGroup({
   VariantProps<typeof toggleVariants>) {
   const value = useMemo(() => {
     return {
-      variant,
       size,
+      variant,
     }
   }, [variant, size])
 
@@ -58,8 +58,8 @@ function ToggleGroupItem({
       data-size={context.size || size}
       className={cn(
         toggleVariants({
-          variant: context.variant || variant,
           size: context.size || size,
+          variant: context.variant || variant,
         }),
         'min-w-0 flex-1 shrink-0 rounded-none shadow-none first:rounded-l-md last:rounded-r-md focus:z-10 focus-visible:z-10 data-[variant=outline]:border-r-0 data-[variant=outline]:border-l-0 data-[variant=outline]:last:border-r data-[variant=outline]:first:border-l',
         className,

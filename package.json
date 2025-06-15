@@ -1,13 +1,4 @@
 {
-  "name": "change-me",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "biome check ./src"
-  },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
@@ -64,5 +55,14 @@
     "tailwindcss": "^4.1.8",
     "tw-animate-css": "^1.3.4",
     "typescript": "^5.8.3"
-  }
+  },
+  "name": "change-me",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbopack",
+    "lint": "biome check ./src",
+    "start": "next start"
+  },
+  "version": "0.0.0"
 }

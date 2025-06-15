@@ -55,114 +55,114 @@ const defaultTheme = {
   },
   styles: [
     {
-      types: ['comment', 'prolog', 'doctype', 'cdata'],
       style: {
         color: 'var(--muted-foreground)',
       },
+      types: ['comment', 'prolog', 'doctype', 'cdata'],
     },
     {
-      types: ['punctuation'],
       style: {
         color: 'var(--foreground)',
       },
+      types: ['punctuation'],
     },
     {
-      types: ['namespace'],
       style: {
         opacity: 0.7,
       },
+      types: ['namespace'],
     },
     {
-      types: ['property', 'keyword', 'tag'],
       style: {
         color: 'var(--primary)',
       },
+      types: ['property', 'keyword', 'tag'],
     },
     {
+      style: {
+        color: 'var(--muted-foreground)',
+      },
       types: ['class-name', 'maybe-class-name'],
+    },
+    {
       style: {
         color: 'var(--muted-foreground)',
       },
-    },
-    {
       types: ['boolean', 'constant'],
-      style: {
-        color: 'var(--muted-foreground)',
-      },
     },
     {
-      types: ['symbol', 'deleted'],
       style: {
         color: 'var(--destructive)',
       },
+      types: ['symbol', 'deleted'],
     },
     {
-      types: ['number'],
       style: {
         color: 'var(--muted-foreground)',
       },
+      types: ['number'],
     },
     {
-      types: ['selector', 'attr-name', 'string', 'char', 'builtin', 'inserted'],
       style: {
         color: 'var(--primary)',
       },
+      types: ['selector', 'attr-name', 'string', 'char', 'builtin', 'inserted'],
     },
     {
+      style: {
+        color: 'var(--muted-foreground)',
+      },
       types: ['variable'],
+    },
+    {
       style: {
         color: 'var(--muted-foreground)',
       },
-    },
-    {
       types: ['operator'],
-      style: {
-        color: 'var(--muted-foreground)',
-      },
     },
     {
-      types: ['entity'],
       style: {
         color: 'var(--muted-foreground)',
         cursor: 'help',
       },
+      types: ['entity'],
     },
     {
-      types: ['url'],
       style: {
         color: 'var(--primary)',
       },
+      types: ['url'],
     },
     {
+      style: {
+        color: 'var(--muted-foreground)',
+      },
       types: ['function'],
+    },
+    {
       style: {
         color: 'var(--muted-foreground)',
       },
-    },
-    {
       types: ['regex'],
-      style: {
-        color: 'var(--muted-foreground)',
-      },
     },
     {
-      types: ['important'],
       style: {
         color: 'var(--destructive)',
         fontWeight: 'bold',
       },
+      types: ['important'],
     },
     {
-      types: ['bold'],
       style: {
         fontWeight: 'bold',
       },
+      types: ['bold'],
     },
     {
-      types: ['italic'],
       style: {
         fontStyle: 'italic',
       },
+      types: ['italic'],
     },
   ],
 } as PrismTheme

@@ -2,11 +2,11 @@ import { codeInspectorPlugin } from 'code-inspector-plugin'
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  experimental: {
-    reactCompiler: true,
-  },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  experimental: {
+    reactCompiler: true,
   },
   typescript: {
     ignoreBuildErrors: true,

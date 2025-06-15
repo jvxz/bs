@@ -110,15 +110,15 @@ function Carousel({
 
   const value = useMemo(() => {
     return {
-      carouselRef,
       api,
+      canScrollNext,
+      canScrollPrev,
+      carouselRef,
       opts,
       orientation:
         orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
-      scrollPrev,
       scrollNext,
-      canScrollPrev,
-      canScrollNext,
+      scrollPrev,
     }
   }, [
     carouselRef,

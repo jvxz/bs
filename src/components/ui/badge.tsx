@@ -8,16 +8,16 @@ import { cn } from '@/lib/utils'
 const badgeVariants = cva(
   `${interactiveStyles.base} inline-flex w-fit shrink-0 cursor-default items-center justify-center px-2 py-0.5 text-xs tracking-wide select-none`,
   {
+    defaultVariants: {
+      variant: 'default',
+    },
     variants: {
       variant: {
         default: `${interactiveStyles.variant.default}`,
         destructive: `${interactiveStyles.variant.destructive}`,
-        outline: `${interactiveStyles.variant.outline}`,
         ghost: `${interactiveStyles.variant.ghost}`,
+        outline: `${interactiveStyles.variant.outline}`,
       },
-    },
-    defaultVariants: {
-      variant: 'default',
     },
   },
 )

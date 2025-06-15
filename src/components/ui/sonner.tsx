@@ -7,11 +7,11 @@ function Toaster({ ...props }: ToasterProps) {
     <Sonner
       toastOptions={{
         classNames: {
-          toast:
-            'group toast !bg-card !text-card-foreground !border-border !shadow-none',
-          description: '!text-muted-foreground',
           actionButton: '!bg-primary !text-primary-foreground font-medium',
           cancelButton: '!bg-muted !text-muted-foreground font-medium',
+          description: '!text-muted-foreground',
+          toast:
+            'group toast !bg-card !text-card-foreground !border-border !shadow-none',
         },
       }}
       {...props}

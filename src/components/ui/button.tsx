@@ -9,24 +9,24 @@ import { Spinner } from './spinner'
 const buttonVariants = cva(
   `${interactiveStyles.base} relative inline-flex items-center justify-center`,
   {
+    defaultVariants: {
+      size: 'default',
+      variant: 'default',
+    },
     variants: {
+      size: {
+        default: interactiveStyles.size.default,
+        icon: interactiveStyles.size.icon,
+        lg: interactiveStyles.size.lg,
+        sm: interactiveStyles.size.sm,
+      },
       variant: {
         default: interactiveStyles.variant.default,
         destructive: interactiveStyles.variant.destructive,
-        outline: interactiveStyles.variant.outline,
         ghost: interactiveStyles.variant.ghost,
         link: interactiveStyles.variant.link,
+        outline: interactiveStyles.variant.outline,
       },
-      size: {
-        default: interactiveStyles.size.default,
-        sm: interactiveStyles.size.sm,
-        lg: interactiveStyles.size.lg,
-        icon: interactiveStyles.size.icon,
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'default',
     },
   },
 )
@@ -54,9 +54,9 @@ function Button({
       disabled={disabled || isLoading}
       className={cn(
         buttonVariants({
-          variant,
-          size,
           className,
+          size,
+          variant,
         }),
         isLoading && 'grid text-transparent [grid-template-areas:stack]',
         disabled && 'pointer-events-none',

@@ -7,14 +7,14 @@ import { cn } from '@/lib/utils'
 const alertVariants = cva(
   `${staticStyles.base} [&>svg]:text-foreground [&>svg]:size-4 [&>svg]:translate-y-1 relative grid w-full grid-cols-[0_1fr] items-start gap-y-1 py-3 has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-[>svg]:gap-x-3`,
   {
+    defaultVariants: {
+      variant: 'default',
+    },
     variants: {
       variant: {
         default: staticStyles.variant.default,
         destructive: `${staticStyles.variant.destructive} *:data-[slot=alert-description]:text-destructive/80`,
       },
-    },
-    defaultVariants: {
-      variant: 'default',
     },
   },
 )

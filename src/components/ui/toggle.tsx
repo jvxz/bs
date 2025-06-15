@@ -12,7 +12,16 @@ const toggleVariants = cva(
     `${interactiveStyles.base} data-[state=on]:bg-accent data-[state=on]:text-accent-foreground p-0`,
   ),
   {
+    defaultVariants: {
+      size: 'default',
+      variant: 'default',
+    },
     variants: {
+      size: {
+        default: [interactiveStyles.size.default, 'text-sm'],
+        lg: [interactiveStyles.size.lg, 'text-sm'],
+        sm: [interactiveStyles.size.sm, 'text-sm'],
+      },
       variant: {
         default: [
           interactiveStyles.variant.ghost,
@@ -23,15 +32,6 @@ const toggleVariants = cva(
           'data-[state=on]:bg-muted data-[state=on]:border-primary/30 m-0',
         ],
       },
-      size: {
-        default: [interactiveStyles.size.default, 'text-sm'],
-        sm: [interactiveStyles.size.sm, 'text-sm'],
-        lg: [interactiveStyles.size.lg, 'text-sm'],
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'default',
     },
   },
 )
@@ -48,9 +48,9 @@ function Toggle({
       data-slot="toggle"
       className={cn(
         toggleVariants({
-          variant,
-          size,
           className,
+          size,
+          variant,
         }),
       )}
       {...props}
