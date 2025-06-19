@@ -1,6 +1,6 @@
-import { Slot as SlotPrimitive } from 'radix-ui'
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
+import { Slot as SlotPrimitive } from 'radix-ui'
 import type { ComponentProps } from 'react'
 import { interactiveStyles } from '@/lib/styles'
 import { cn } from '@/lib/utils'
@@ -47,6 +47,25 @@ function Button({
     disabled?: boolean
   }) {
   const Comp = asChild ? SlotPrimitive.Slot : 'button'
+
+  if (asChild)
+    return (
+      <Comp
+        data-slot="button"
+        disabled={disabled || isLoading}
+        className={cn(
+          buttonVariants({
+            className,
+            size,
+            variant,
+          }),
+          isLoading && 'grid text-transparent [grid-template-areas:stack]',
+          disabled && 'pointer-events-none',
+        )}
+        {...props}>
+        {children}
+      </Comp>
+    )
 
   return (
     <Comp

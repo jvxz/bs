@@ -47,7 +47,7 @@ function CardDescription({ className, ...props }: ComponentProps<'div'>) {
   )
 }
 
-function CardContent({ className, ...props }: ComponentProps<'div'>) {
+function CardContent({ ...props }: ComponentProps<'div'>) {
   return <div data-slot="card-content" {...props} />
 }
 
