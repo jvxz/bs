@@ -1,5 +1,8 @@
+import { IconArrowRight } from '@tabler/icons-react'
+import Link from 'next/link'
 import { Suspense } from 'react'
 import { ThemeToggle } from '@/components/theme-toggle'
+import { Button } from '@/components/ui/button'
 import { client } from '@/lib/hono/client'
 
 export const dynamic = 'force-dynamic'
@@ -11,6 +14,11 @@ export default function Page() {
       <Suspense fallback={<p>loading from hono...</p>}>
         <HonoData />
       </Suspense>
+      <Button variant="link" asChild>
+        <Link href="/api/scalar">
+          view docs <IconArrowRight />
+        </Link>
+      </Button>
     </div>
   )
 }

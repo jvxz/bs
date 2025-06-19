@@ -1,3 +1,4 @@
+import { Scalar } from '@scalar/hono-api-reference'
 import { handle } from 'hono/vercel'
 import { createHonoApp } from '@/lib/hono'
 import { createOpenApi } from '@/lib/hono/open-api'
@@ -8,8 +9,19 @@ export const dynamic = 'force-dynamic'
 const app = createHonoApp().basePath('/api')
 
 createOpenApi(app)
+app.get(
+  '/scalar',
+  Scalar({
+    defaultHttpClient: {
+      clientKey: 'fetch',
+      targetKey: 'js',
+    },
+    theme: 'alternate',
+    url: '/api/docs',
+  }),
+)
 
-const route = app.route('/greeting', greeting)
+const routes = app.route('/greeting', greeting)
 
 export const GET = handle(app)
 export const POST = handle(app)
@@ -19,4 +31,4 @@ export const DELETE = handle(app)
 export const HEAD = handle(app)
 export const OPTIONS = handle(app)
 
-export type AppType = typeof route
+export type AppType = typeof routes

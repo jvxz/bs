@@ -1,13 +1,25 @@
-import { createHonoApp } from '..'
+import { z } from '@hono/zod-openapi'
+import { jsonContent } from 'stoker/openapi/helpers'
+import { createHonoRouter } from '@/lib/hono'
 
-const app = createHonoApp()
+const app = createHonoRouter()
 
-export const greeting = app.get('/', async c => {
-  c.var.logger.info('waiting for 2 seconds...')
+const route = app.openapi(
+  {
+    method: 'get',
+    // this is required to be type casted as a const,
+    // otherwise the rpc client will throw a type error
+    path: '/' as const,
+    responses: {
+      200: jsonContent(
+        z.object({
+          message: z.string(),
+        }),
+        'test resolved 🔥',
+      ),
+    },
+  },
+  async c => c.json({ message: 'hello from hono!! 🔥' }, 200),
+)
 
-  await new Promise(resolve => setTimeout(resolve, 2000))
-
-  return c.json({
-    message: `hello from hono!! 🔥`,
-  })
-})
+export { route as greeting }
