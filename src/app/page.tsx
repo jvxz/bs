@@ -1,24 +1,23 @@
-'use client'
-import { useSuspenseQuery } from '@tanstack/react-query'
+import { headers } from 'next/headers'
 import { Suspense } from 'react'
+import { auth } from '@/auth'
+import { DemoAuthButtons } from '@/components/demo-auth-buttons'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { Spinner } from '@/components/ui/spinner'
-import { useTRPC } from '@/lib/trpc/client'
 
-export default function Page() {
+export default async function Page() {
+  const headersList = await headers()
+  const session = await auth.api.getSession({
+    headers: headersList,
+  })
+
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-4">
       <ThemeToggle />
-      <Suspense fallback={<Spinner invert className="size-7" />}>
-        <TRPCData />
+      <DemoAuthButtons />
+      <Suspense fallback={<Spinner />}>
+        <pre>{JSON.stringify(session, null, 2)}</pre>
       </Suspense>
     </div>
   )
-}
-
-function TRPCData() {
-  const trpc = useTRPC()
-  const { data } = useSuspenseQuery(trpc.hello.queryOptions())
-
-  return <pre>{data}</pre>
 }
