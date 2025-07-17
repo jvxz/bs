@@ -1,27 +1,28 @@
 const interactiveStyles = {
-  base: 'focus-visible:border-primary/50 select-none focus-visible:ring-ring/40 focus-visible:ring-[3px] active:ring-ring/60 aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:aria-invalid:ring-destructive/40 shrink-0 gap-2 rounded text-base whitespace-nowrap outline-none disabled:pointer-events-none hover:disabled:cursor-not-allowed disabled:opacity-50 underline-offset-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:size-4',
+  base: 'cursor-pointer font-medium focus-visible:border-primary/50 select-none focus-visible:ring-ring/40 focus-visible:ring-[3px] active:ring-ring/60 aria-invalid:ring-destructive/20 aria-invalid:border-destructive dark:aria-invalid:ring-destructive/40 shrink-0 gap-2 rounded text-base whitespace-nowrap outline-none disabled:pointer-events-none hover:disabled:cursor-not-allowed disabled:opacity-50 underline-offset-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:size-4 active:scale-[97%] transition-transform duration-150',
   size: {
     default: 'h-8 px-3 py-1.5 text-sm',
     icon: 'aspect-square size-8',
     lg: 'h-10 px-5 text-base text-lg',
-    sm: 'h-7 px-2.5 py-1 text-sm',
+    sm: 'h-7 px-2.5 py-1 text-xs',
   },
   variant: {
     default:
-      'bg-primary/90 hover:bg-primary active:bg-primary/90 text-primary-foreground',
+      'bg-primary/85 border hover:bg-primary/90 border-primary active:bg-primary/85 text-primary-foreground glow-primary',
     destructive:
       'hover:bg-destructive/90 bg-destructive/90 text-destructive-foreground hover:bg-destructive active:bg-destructive',
-    ghost: 'hover:bg-muted/90 active:bg-muted',
+    ghost: 'hover:bg-muted/90 active:bg-muted/80',
     link: 'text-primary underline-offset-4 hover:underline',
     outline:
-      'border-border/90 hover:bg-muted/90 active:bg-muted hover:border-border active:border-border border bg-transparent',
+      'border-border/90 hover:bg-muted/90 active:bg-muted/80 hover:border-border active:border-border border bg-transparent',
   },
 }
 
 const staticStyles = {
   base: 'rounded p-5',
   variant: {
-    default: 'bg-card border text-card-foreground',
+    default:
+      'bg-card shadow-[0px_-1px_0px_0px_hsl(from_var(--muted-foreground)_h_s_l/0.40),0px_1px_0px_0px_hsl(from_var(--muted)_h_s_l),inset_0px_-2px_0px_0px_hsl(from_var(--muted-foreground)_h_s_l/0.035)] border border-y-0 text-card-foreground',
     destructive:
       'bg-card border-destructive text-destructive border [&>svg]:text-current',
   },
