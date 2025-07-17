@@ -14,7 +14,7 @@ function Switch({
       className={cn(
         staticStyles.base,
         staticStyles.variant.default,
-        'inline-flex h-5 w-9 items-center rounded-full border-2 border-muted bg-muted p-0 data-[state=checked]:border-primary data-[state=checked]:bg-primary',
+        'data-[state=checked]:glow-primary inline-flex h-5 w-9 items-center rounded-full border-2 border-muted bg-muted p-0 transition-all duration-150 data-[state=checked]:border-primary data-[state=checked]:bg-primary',
         className,
       )}
       {...props}>
