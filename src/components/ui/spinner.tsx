@@ -1,13 +1,22 @@
 import type { SVGProps } from 'react'
 
-export function Spinner(props: SVGProps<SVGSVGElement>) {
+interface Props extends SVGProps<SVGSVGElement> {
+  invert?: boolean
+}
+
+export function Spinner({ invert, ...props }: Props) {
   return (
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" {...props}>
       <title>Loading...</title>
       <style>
-        {
-          '@keyframes spinner-fade{0%{opacity:1}to{opacity:.1}}.spinner-line{animation:spinner-fade 1.2s linear infinite;stroke:var(--muted-foreground);stroke-linecap:round}'
-        }
+        {'@keyframes spinner-fade{0%{opacity:1}to{opacity:.1}}.spinner-line{animation:spinner-fade 1.2s linear infinite;stroke:var(--primary-foreground);stroke-linecap:round}' +
+          (invert
+            ? `
+              .spinner-line {
+                stroke: var(--primary);
+              }
+            `
+            : '')}
       </style>
       <path
         className="spinner-line"
