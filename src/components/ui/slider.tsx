@@ -43,7 +43,7 @@ function Slider({
         <SliderPrimitive.Range
           data-slot="slider-range"
           className={cn(
-            'absolute bg-primary/90 data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full',
+            'absolute bg-primary/85 data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full',
           )}
         />
       </SliderPrimitive.Track>
@@ -59,7 +59,7 @@ function Slider({
             className={cn(
               interactiveStyles.base,
               interactiveStyles.variant.default,
-              'block size-4.5 cursor-default rounded-full bg-background transition',
+              'glow-primary block size-4.5 cursor-pointer rounded-full bg-primary hover:bg-primary active:bg-primary',
             )}
           />
         ),
