@@ -82,30 +82,30 @@
 
 :root {
   --background: hsl(223.8136 0.0005% 98.6829%);
-  --foreground: hsl(0 0% 0%);
+  --foreground: hsl(0 0% 10%);
   --card: hsl(223.8136 -172.5242% 100%);
-  --card-foreground: hsl(0 0% 0%);
+  --card-foreground: hsl(0 0% 10%);
   --popover: hsl(223.8136 0.0005% 98.6829%);
-  --popover-foreground: hsl(0 0% 0%);
+  --popover-foreground: hsl(0 0% 10%);
   --primary: hsl(0 0% 0%);
   --primary-foreground: hsl(223.8136 -172.5242% 100%);
   --secondary: hsl(223.8136 0.0001% 92.1478%);
-  --secondary-foreground: hsl(0 0% 0%);
-  --muted: hsl(223.8136 0.0002% 96.0587%);
-  --muted-foreground: hsl(223.8136 0% 32.3067%);
+  --secondary-foreground: hsl(0 0% 10%);
+  --muted: hsl(223.8136 0.0002% 90.0587%);
+  --muted-foreground: hsl(223.8136 0% 40.3067%);
   --accent: hsl(223.8136 0.0001% 92.1478%);
-  --accent-foreground: hsl(0 0% 0%);
+  --accent-foreground: hsl(0 0% 10%);
   --destructive: hsl(358.4334 74.912% 59.7455%);
   --destructive-foreground: hsl(223.8136 -172.5242% 100%);
   --border: hsl(223.8136 0.0001% 89.5577%);
   --input: hsl(223.8136 0.0001% 92.1478%);
   --ring: hsl(0 0% 0%);
-  --radius: 0.5rem;
+  --radius: 0.75rem;
 }
 
 .dark {
   --background: hsl(0 0% 0%);
-  --foreground: hsl(223.8136 -172.5242% 100%);
+  --foreground: hsl(223.8136 -172.5242% 98%);
   --card: hsl(223.8136 0% 3.5452%);
   --card-foreground: hsl(223.8136 -172.5242% 100%);
   --popover: hsl(223.8136 0% 6.8692%);
@@ -127,10 +127,14 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 font-sans;
+    @apply border-border outline-ring/50 font-sans min-h-0 min-w-0;
     transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
   }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@utility glow-* {
+  box-shadow: 0 0 28px -3px oklch(from --value(--color-*) l c h / 0.3);
 }
