@@ -44,7 +44,7 @@ function TabsTrigger({
       data-slot="tabs-trigger"
       className={cn(
         'relative inline-flex flex-1 cursor-default items-center justify-center border-0 bg-transparent py-1 text-muted-foreground text-sm data-[state=active]:text-foreground',
-        'before:absolute before:inset-x-0 before:top-[calc(100%-1px)] before:h-px before:rounded-full before:bg-transparent before:transition-all before:duration-100 before:ease-in-out before:content-[""] data-[state=active]:before:bg-foreground',
+        'before:glow-primary before:absolute before:inset-x-0 before:top-[calc(100%-1px)] before:h-[2px] before:rounded-full before:bg-transparent before:transition-all before:duration-100 before:ease-in-out before:content-[""] data-[state=active]:before:bg-primary',
         className,
       )}
       {...props}
