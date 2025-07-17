@@ -16,6 +16,7 @@ function Providers({ children, ...props }: ThemeProviderProps) {
   return (
     <TRPCReactProvider>
       <NextThemesProvider
+        disableTransitionOnChange
         attribute="class"
         defaultTheme="system"
         enableSystem
