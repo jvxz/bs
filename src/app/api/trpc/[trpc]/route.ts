@@ -11,4 +11,5 @@ function handler(req: Request) {
     router: appRouter,
   })
 }
+
 export { handler as GET, handler as POST }
