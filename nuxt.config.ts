@@ -1,7 +1,17 @@
 import tailwindcss from '@tailwindcss/vite'
+import { name as pkgName } from './package.json'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      htmlAttrs: {
+        style: 'background-color: var(--color-background);',
+      },
+      titleTemplate: '%siteName',
+    },
+  },
+
   compatibilityDate: '2025-07-15',
 
   css: ['~/assets/css/globals.css'],
@@ -15,6 +25,13 @@ export default defineNuxtConfig({
     },
   },
 
+  fonts: {
+    defaults: {
+      preload: true,
+      weights: [400, 500, 700],
+    },
+  },
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
@@ -22,8 +39,25 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-security',
     '@vueuse/nuxt',
-    'reka-ui',
+    'reka-ui/nuxt',
+    '@nuxtjs/seo',
+    '@nuxtjs/color-mode',
   ],
+
+  nitro: {
+    imports: {
+      dirs: [
+        './server/schema/*',
+        './server/utils/*',
+      ],
+      presets: [
+        {
+          from: 'zod',
+          imports: ['z'],
+        },
+      ],
+    },
+  },
 
   security: {
     headers: {
@@ -34,6 +68,10 @@ export default defineNuxtConfig({
       },
     },
     rateLimiter: process.env.NODE_ENV === 'production' ? undefined : false,
+  },
+
+  site: {
+    name: pkgName,
   },
 
   vite: {
