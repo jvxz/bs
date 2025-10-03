@@ -1,9 +1,46 @@
 <script lang="ts" setup>
-const ts = useTimestamp()
+const dialogOpen = ref(false)
+const timestamp = useTimestamp()
 </script>
 
 <template>
-  <div class="flex h-screen items-center justify-center">
-    {{ ts }}
-  </div>
+  <Transition name="zoom" appear>
+    <div class="flex h-screen flex-col items-center justify-center gap-2">
+      <ClientOnly>
+        <p>{{ timestamp }}</p>
+      </ClientOnly>
+      <UDropdownMenuRoot>
+        <UDropdownMenuTrigger as-child>
+          <UButton>
+            Click!
+          </UButton>
+        </UDropdownMenuTrigger>
+        <UDropdownMenuContent>
+          <UDropdownMenuItem @select="dialogOpen = true">
+            Dialog
+          </UDropdownMenuItem>
+        </UDropdownMenuContent>
+      </UDropdownMenuRoot>
+      <UDialogRoot v-model:open="dialogOpen">
+        <UDialogContent>
+          <UDialogHeader>
+            <UDialogTitle>
+              Example
+            </UDialogTitle>
+          </UDialogHeader>
+          <p class="font-sans">
+            This is sans
+          </p>
+          <p class="font-mono">
+            This is mono
+          </p>
+          <UDialogFooter>
+            <UDialogClose as-child>
+              <UButton>Close </UButton>
+            </UDialogClose>
+          </UDialogFooter>
+        </UDialogContent>
+      </UDialogRoot>
+    </div>
+  </Transition>
 </template>
