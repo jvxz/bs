@@ -42,6 +42,7 @@ export default defineNuxtConfig({
     'reka-ui/nuxt',
     '@nuxtjs/seo',
     '@nuxtjs/color-mode',
+    'nuxt-vitalizer',
   ],
 
   nitro: {
