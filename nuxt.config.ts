@@ -20,7 +20,20 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
+    'nuxt-security',
+    '@vueuse/nuxt',
   ],
+
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        'img-src': [
+          'data:',
+        ],
+      },
+    },
+    rateLimiter: process.env.NODE_ENV === 'production' ? undefined : false,
+  },
 
   vite: {
     plugins: [tailwindcss()],
