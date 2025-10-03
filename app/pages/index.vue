@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 const dialogOpen = ref(false)
 const timestamp = useTimestamp()
+
+const { data: randomNumber } = await useFetch('/api/number')
 </script>
 
 <template>
@@ -9,6 +11,7 @@ const timestamp = useTimestamp()
       <ClientOnly>
         <p>{{ timestamp }}</p>
       </ClientOnly>
+      <p>{{ randomNumber }}</p>
       <UDropdownMenuRoot>
         <UDropdownMenuTrigger as-child>
           <UButton>
