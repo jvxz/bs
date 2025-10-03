@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-security',
     '@vueuse/nuxt',
+    'reka-ui',
   ],
 
   security: {
