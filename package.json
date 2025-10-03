@@ -1,48 +1,29 @@
 {
-  "dependencies": {
-    "next": "15.4.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.0.5",
-    "@radix-ui/react-toast": "^1.2.14",
-    "@tabler/icons-react": "^3.34.1",
-    "@tailwindcss/postcss": "^4.1.11",
-    "@tanstack/react-query": "^5.84.1",
-    "@trpc/client": "^11.4.3",
-    "@trpc/server": "^11.4.3",
-    "@trpc/tanstack-react-query": "^11.4.3",
-    "@types/node": "^24.1.0",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
-    "babel-plugin-react-compiler": "19.1.0-rc.2",
-    "bumpp": "^10.2.2",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "cmdk": "^1.1.1",
-    "embla-carousel-react": "^8.6.0",
-    "input-otp": "^1.4.2",
-    "next-themes": "^0.4.6",
-    "prism-react-renderer": "^2.4.1",
-    "radix-ui": "^1.4.2",
-    "sonner": "^2.0.7",
-    "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.11",
-    "tw-animate-css": "^1.3.6",
-    "typescript": "^5.9.2"
-  },
-  "name": "change-me",
+  "name": "nuxt-app",
+  "type": "module",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "check": "tsc --noEmit",
-    "deploy": "pnpm lint && pnpm check && bumpp -p",
-    "deploy:force": "bumpp -p",
-    "dev": "next dev --turbopack",
-    "lint": "biome lint --changed",
-    "lint:all": "biome lint",
-    "start": "next start"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
-  "version": "0.0.0"
+  "dependencies": {
+    "@nuxt/eslint": "1.9.0",
+    "@nuxt/fonts": "0.11.4",
+    "@nuxt/icon": "2.0.0",
+    "@nuxt/image": "1.11.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "nuxt": "^4.1.2",
+    "tailwindcss": "^4.1.14",
+    "vue": "^3.5.22",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^5.4.1",
+    "eslint": "^9.36.0",
+    "eslint-plugin-better-tailwindcss": "^3.7.9",
+    "eslint-plugin-format": "^1.0.2"
+  }
 }
