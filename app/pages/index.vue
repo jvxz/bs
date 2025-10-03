@@ -24,6 +24,15 @@ const { data: randomNumber } = await useFetch('/api/number')
           </UDropdownMenuItem>
         </UDropdownMenuContent>
       </UDropdownMenuRoot>
+      <ClientOnly>
+        <UButton
+          size="icon"
+          variant="soft"
+          @click="toggleColorMode"
+        >
+          <Icon :name="$colorMode.value === 'dark' ? 'tabler:sun' : 'tabler:moon'" />
+        </UButton>
+      </ClientOnly>
       <UDialogRoot v-model:open="dialogOpen">
         <UDialogContent>
           <UDialogHeader>
