@@ -27,6 +27,7 @@ export default withNuxt(
           },
         },
       ],
+      'vue/no-empty-component-block': 'warn',
       'vue/no-multiple-template-root': 'off',
       'vue/sort-keys': 'warn',
     },
