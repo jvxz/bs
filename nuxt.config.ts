@@ -29,6 +29,10 @@ export default defineNuxtConfig({
     },
   },
 
+  experimental: {
+    typescriptPlugin: true,
+  },
+
   fonts: {
     defaults: {
       preload: true,

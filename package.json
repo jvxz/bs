@@ -37,7 +37,8 @@
     "@types/node": "^24.7.0",
     "eslint": "^9.37.0",
     "eslint-plugin-better-tailwindcss": "^3.7.9",
-    "eslint-plugin-format": "^1.0.2"
+    "eslint-plugin-format": "^1.0.2",
+    "typescript": "^5.9.3"
   },
   "pnpm": {
     "overrides": {
