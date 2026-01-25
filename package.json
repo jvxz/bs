@@ -40,9 +40,7 @@
     "eslint-plugin-format": "^1.0.2",
     "typescript": "^5.9.3"
   },
-  "pnpm": {
-    "overrides": {
-      "vite": "npm:rolldown-vite@latest"
-    }
+  "overrides": {
+    "vite": "npm:rolldown-vite@latest"
   }
 }

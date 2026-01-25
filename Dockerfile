@@ -1,18 +1,16 @@
-FROM node:22-alpine AS build
+FROM oven/bun:latest AS build
 
 WORKDIR /app
 
-RUN corepack enable
+COPY package.json bun.lockb ./
 
-COPY package.json pnpm-lock.yaml ./
-
-RUN pnpm i
+RUN bun install
 
 COPY . ./
 
 # ARG EXAMPLE_VARIABLE
 
-RUN pnpm run build
+RUN bun run build
 
 FROM node:22-alpine
 
