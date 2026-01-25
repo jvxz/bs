@@ -41,6 +41,7 @@
     "typescript": "^5.9.3"
   },
   "overrides": {
+    "typescript": "npm:tslite@latest",
     "vite": "npm:rolldown-vite@latest"
   }
 }
