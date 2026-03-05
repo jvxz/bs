@@ -37,7 +37,9 @@ export default defineNuxtConfig({
   },
 
   experimental: {
+    typedPages: true,
     typescriptPlugin: true,
+    viteEnvironmentApi: true,
   },
 
   fonts: {
