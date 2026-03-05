@@ -42,6 +42,6 @@
   },
   "overrides": {
     "typescript": "npm:tslite@latest",
-    "vite": "npm:rolldown-vite@latest"
+    "vite": "beta"
   }
 }
