@@ -62,7 +62,6 @@ export default defineNuxtConfig({
   ],
 
   nitro: {
-    preset: 'node-server',
     imports: {
       dirs: [
         './server/schema/*',
@@ -75,6 +74,7 @@ export default defineNuxtConfig({
         },
       ],
     },
+    preset: 'bun',
   },
 
   security: {
