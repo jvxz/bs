@@ -9,7 +9,9 @@ const { data: randomNumber } = await useFetch('/api/number')
   <Transition name="zoom" appear>
     <div class="flex h-screen flex-col items-center justify-center gap-2">
       <ClientOnly>
-        <p>{{ timestamp }}</p>
+        <p class="tabular-nums">
+          {{ timestamp }}
+        </p>
       </ClientOnly>
       <p>{{ randomNumber }}</p>
       <UDropdownMenuRoot>
