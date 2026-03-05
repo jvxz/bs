@@ -29,6 +29,13 @@ export default defineNuxtConfig({
     },
   },
 
+  evlog: {
+    exclude: [
+      '**/_**',
+      '**/auth/**',
+    ],
+  },
+
   experimental: {
     typescriptPlugin: true,
   },
@@ -51,6 +58,7 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxtjs/color-mode',
     'nuxt-vitalizer',
+    'evlog/nuxt',
   ],
 
   nitro: {
