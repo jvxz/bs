@@ -4,11 +4,8 @@
 @custom-variant dark (&:where(.dark-mode, .dark-mode *));
 
 @theme inline {
-  --font-sans: 'Pretendard', sans-serif;
-  --font-mono: 'Lilex', monospace;
-  --animate-accordion-down: accordion-down 0.15s;
-  --animate-accordion-up: accordion-up 0.15s;
-  --animate-caret-blink: caret-blink 1s ease-out infinite;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Paper Mono', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -47,37 +44,6 @@
   --radius: var(--radius);
   --radius-lg: calc(var(--radius) + 2px);
   --radius-xl: calc(var(--radius) + 4px);
-
-  @keyframes accordion-down {
-    from {
-      height: 0;
-      opacity: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-      opacity: 1;
-    }
-  }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-      opacity: 0;
-    }
-  }
-  @keyframes caret-blink {
-    0%,
-    70%,
-    100% {
-      opacity: 1;
-    }
-    20%,
-    50% {
-      opacity: 0;
-    }
-  }
 }
 
 :root {
