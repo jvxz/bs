@@ -1,7 +1,6 @@
 import tailwindcss from '@tailwindcss/vite'
-import { name as pkgName } from './package.json'
+import { name as pkgName, version as pkgVersion } from './package.json'
 
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     head: {
@@ -30,9 +29,15 @@ export default defineNuxtConfig({
   },
 
   evlog: {
+    env: {
+      service: pkgName,
+      version: pkgVersion,
+    },
     exclude: [
       '**/_**',
-      '**/auth/**',
+    ],
+    include: [
+      '**/api/**',
     ],
   },
 
@@ -45,8 +50,23 @@ export default defineNuxtConfig({
   fonts: {
     defaults: {
       preload: true,
-      weights: [400, 500, 700],
+      weights: ['100 900'],
     },
+  },
+
+  imports: {
+    dirs: [
+      '~/app/utils/**/*.ts',
+      '~/composables/**/*.ts',
+    ],
+    presets: [
+      { package: 'scule' },
+      {
+        from: 'evlog',
+        imports: ['createError'],
+        priority: 2,
+      },
+    ],
   },
 
   modules: [
@@ -95,6 +115,7 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    // @ts-expect-error - wrong types
     plugins: [tailwindcss()],
   },
 })
