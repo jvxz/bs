@@ -1,3 +1,4 @@
+// @unocss-include
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
 
@@ -6,7 +7,7 @@ export const buttonVariants = cva(
   {
     defaultVariants: {
       size: 'default',
-      variant: 'default',
+      variant: 'soft',
     },
     variants: {
       size: {

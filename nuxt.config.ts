@@ -1,4 +1,3 @@
-import tailwindcss from '@tailwindcss/vite'
 import { name as pkgName, version as pkgVersion } from './package.json'
 
 export default defineNuxtConfig({
@@ -74,6 +73,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
+    '@unocss/nuxt',
     'nuxt-security',
     '@vueuse/nuxt',
     'reka-ui/nuxt',
@@ -81,6 +81,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-vitalizer',
     'evlog/nuxt',
+    '@compodium/nuxt',
   ],
 
   nitro: {
@@ -112,10 +113,5 @@ export default defineNuxtConfig({
 
   site: {
     name: pkgName,
-  },
-
-  vite: {
-    // @ts-expect-error - wrong types
-    plugins: [tailwindcss()],
   },
 })
