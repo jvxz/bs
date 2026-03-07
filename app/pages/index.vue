@@ -32,7 +32,7 @@ const { data: randomNumber } = await useFetch('/api/number')
           variant="soft"
           @click="toggleColorMode"
         >
-          <Icon :name="$colorMode.value === 'dark' ? 'tabler:sun' : 'tabler:moon'" />
+          <Icon :name="$colorMode.value === 'dark' ? 'mingcute:sun-line' : 'mingcute:moon-line'" />
         </UButton>
       </ClientOnly>
       <UDialogRoot v-model:open="dialogOpen">

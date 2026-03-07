@@ -27,7 +27,7 @@
       "devDependencies": {
         "@antfu/eslint-config": "^7.7.0",
         "@compodium/nuxt": "0.1.0-beta.12",
-        "@iconify-json/tabler": "^1.2.30",
+        "@iconify-json/mingcute": "^1.2.1",
         "@nuxt/eslint": "1.15.2",
         "@types/node": "^24.12.0",
         "@unocss/eslint-plugin": "^66.6.6",
@@ -243,7 +243,7 @@
 
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.3", "", {}, "sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ=="],
 
-    "@iconify-json/tabler": ["@iconify-json/tabler@1.2.30", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-fhy+uBj3zwRpwWIKLc5qAaS9GB4XPvLW9/WhKqGbjNpNQeAnkcM3i3B5kylOmqlUmWwO0Pq/7qyiKqFmLyE73w=="],
+    "@iconify-json/mingcute": ["@iconify-json/mingcute@1.2.7", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-bp4z6F53KAQp99aSL7qPCHL7HWUNGMNKIhfo/dx9pwVHiad/WusUbTOFXEZfpA44syJPzSOxa3O6Pwiq7qZz1g=="],
 
     "@iconify/collections": ["@iconify/collections@1.0.658", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-u7ydr+1Cf+2p4iJ/2QmKNXix9Dc9XKRTN48LrultZ5aHLAKc5XRW8XbN0SxeJHd+8P8iVa7FmNSwIsIubsJ2oQ=="],
 
