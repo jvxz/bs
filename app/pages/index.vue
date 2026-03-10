@@ -7,7 +7,7 @@ const { data: randomNumber } = await useFetch('/api/number')
 
 <template>
   <Transition name="zoom" appear>
-    <div class="flex h-screen flex-col items-center justify-center gap-2">
+    <div class="flex flex-col gap-2 h-screen items-center justify-center">
       <ClientOnly>
         <p class="tabular-nums">
           {{ timestamp }}
