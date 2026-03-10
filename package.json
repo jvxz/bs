@@ -8,7 +8,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@nuxt/fonts": "0.14.0",
@@ -21,6 +22,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "evlog": "^2.3.0",
+    "motion-v": "^2.0.0",
     "nuxt": "^4.3.1",
     "nuxt-security": "2.5.1",
     "nuxt-vitalizer": "2.0.0",
