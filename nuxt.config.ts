@@ -82,6 +82,7 @@ export default defineNuxtConfig({
     'nuxt-vitalizer',
     'evlog/nuxt',
     '@compodium/nuxt',
+    '@nuxt/hints',
   ],
 
   nitro: {
