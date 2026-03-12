@@ -1,12 +1,18 @@
-export default defineEventHandler(async () => {
+export default defineEventHandler(async (event) => {
+  const logger = useLogger(event)
+
   const number = Math.random()
+
+  logger.set({
+    number,
+  })
 
   if (number < 0.5) {
     throw createError({
-      message: 'Number is less than 0.5',
+      message: 'You got unlucky...',
       status: 422,
     })
   }
 
-  return `Your number was ${number.toFixed(2)}`
+  return `You got lucky!`
 })
