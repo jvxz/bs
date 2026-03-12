@@ -115,4 +115,16 @@ export default defineNuxtConfig({
   site: {
     name: pkgName,
   },
+
+  vite: {
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        'clsx',
+        'tailwind-merge',
+        'class-variance-authority',
+      ],
+    },
+  },
 })
