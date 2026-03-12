@@ -60,11 +60,6 @@ export default defineNuxtConfig({
     ],
     presets: [
       { package: 'scule' },
-      {
-        from: 'evlog',
-        imports: ['createError'],
-        priority: 2,
-      },
     ],
   },
 
@@ -95,6 +90,14 @@ export default defineNuxtConfig({
         {
           from: 'zod',
           imports: ['z'],
+        },
+        {
+          from: 'evlog',
+          imports: [
+            'useLogger',
+            'createError',
+          ],
+          priority: 2,
         },
       ],
     },
