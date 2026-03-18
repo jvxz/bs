@@ -1,5 +1,6 @@
 // @unocss-include
 import type { VariantProps } from 'class-variance-authority'
+
 import { cva } from 'class-variance-authority'
 
 export const buttonVariants = cva(
@@ -78,3 +79,34 @@ export const alertVariants = cva(
   },
 )
 export type AlertVariants = VariantProps<typeof alertVariants>
+
+export const toggleVariants = cva(
+  cn(
+    interactiveStyles.base,
+    `${interactiveStyles.base} p-0 data-[state=on]:text-accent-foreground data-[state=on]:bg-accent`,
+  ),
+  {
+    defaultVariants: {
+      size: 'default',
+      variant: 'default',
+    },
+    variants: {
+      size: {
+        default: [interactiveStyles.size.default, 'text-sm'],
+        lg: [interactiveStyles.size.lg, 'text-sm'],
+        sm: [interactiveStyles.size.sm, 'text-sm'],
+      },
+      variant: {
+        default: [
+          interactiveStyles.variant.ghost,
+          'data-[state=on]:bg-muted m-0 border border-transparent',
+        ],
+        outline: [
+          interactiveStyles.variant.outline,
+          'data-[state=on]:bg-muted data-[state=on]:border-primary/30 m-0',
+        ],
+      },
+    },
+  },
+)
+export type ToggleVariants = VariantProps<typeof toggleVariants>
