@@ -3,7 +3,7 @@ const items = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape'
 </script>
 
 <template>
-  <div class="flex items-center justify-center h-screen">
+  <div class="flex h-screen items-center justify-center">
     <UAutocompleteRoot>
       <UAutocompleteAnchor class="w-xs">
         <UAutocompleteInput />
