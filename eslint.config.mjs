@@ -9,19 +9,30 @@ export default withNuxt(antfu({
     'node/prefer-global/buffer': 'off',
     'node/prefer-global/process': 'off',
     'perfectionist/sort-objects': 'warn',
-    'unocss/order': ['warn', {
-      unoFunctions: ['clsx', 'classnames', 'cn'],
-      unoVariables: ['^cls', 'className', 'styles$', '^(interactiveStyles|staticStyles|popoverStyles|overlayStyles)$'],
-    }],
+    'unocss/order': [
+      'warn',
+      {
+        unoFunctions: ['clsx', 'classnames', 'cn'],
+        unoVariables: [
+          '^cls',
+          'className',
+          'styles$',
+          '^(interactiveStyles|staticStyles|popoverStyles|overlayStyles)$',
+        ],
+      },
+    ],
     'vue/html-self-closing': 'off',
-    'vue/max-attributes-per-line': ['warn', {
-      multiline: {
-        max: 1,
+    'vue/max-attributes-per-line': [
+      'warn',
+      {
+        multiline: {
+          max: 1,
+        },
+        singleline: {
+          max: 2,
+        },
       },
-      singleline: {
-        max: 2,
-      },
-    }],
+    ],
     'vue/no-multiple-template-root': 'off',
     'vue/sort-keys': 'warn',
   },

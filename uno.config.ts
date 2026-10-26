@@ -44,5 +44,7 @@ export default defineConfig({
       DEFAULT: '0.235rem',
     },
   },
-  transformers: [transformerDirectives({ throwOnMissing: false })],
+  transformers: [
+    transformerDirectives({ throwOnMissing: false }),
+  ],
 })
