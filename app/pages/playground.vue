@@ -1,9 +1,33 @@
 <script lang="ts" setup>
-const items = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew', 'Kiwi', 'Lemon', 'Lime', 'Mango', 'Melon', 'Nectarine', 'Orange', 'Papaya', 'Pear', 'Pineapple', 'Plum', 'Raspberry', 'Strawberry', 'Tangerine', 'Watermelon']
+const items = [
+  'Apple',
+  'Banana',
+  'Cherry',
+  'Date',
+  'Elderberry',
+  'Fig',
+  'Grape',
+  'Honeydew',
+  'Kiwi',
+  'Lemon',
+  'Lime',
+  'Mango',
+  'Melon',
+  'Nectarine',
+  'Orange',
+  'Papaya',
+  'Pear',
+  'Pineapple',
+  'Plum',
+  'Raspberry',
+  'Strawberry',
+  'Tangerine',
+  'Watermelon',
+]
 </script>
 
 <template>
-  <div class="flex items-center justify-center h-screen">
+  <div class="flex h-screen items-center justify-center">
     <UAutocompleteRoot>
       <UAutocompleteAnchor class="w-xs">
         <UAutocompleteInput />
